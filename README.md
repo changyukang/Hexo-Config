@@ -1,2 +1,4 @@
 # Hexo-Config
-Hexo configuration for github blog.
+* Hexo configuration for github blog;
+* Theme is managed by git submodule.
+
