@@ -1,6 +1,6 @@
-[submodule "themes\\TRNexT\\"]
-	path = themes\\TRNexT\\
+[submodule "themes\\TRNexT"]
+	path = themes\\TRNexT
 	url = https://github.com/uruir/TRNexT.git
-[submodule "themes\\hexo-theme-noderce\\"]
-	path = themes\\hexo-theme-noderce\\
+[submodule "themes\\hexo-theme-noderce"]
+	path = themes\\hexo-theme-noderce
 	url = https://github.com/willerce/hexo-theme-noderce.git
