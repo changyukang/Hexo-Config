@@ -1,4 +1,9 @@
 title: {{ title }}
 date: {{ date }}
-tags:
+layout: post
+categories: 
+tags: 
+keywords:
+description: 
+comment: true
 ---
