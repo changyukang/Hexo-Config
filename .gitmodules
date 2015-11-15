@@ -1,6 +1,3 @@
-[submodule "themes/TRNexT"]
-	path = themes/TRNexT
-	url = git@github.com:changyukang/TRNexT.git
 [submodule "themes/hexo-theme-next"]
 	path = themes/hexo-theme-next
 	url = git@github.com:changyukang/hexo-theme-next.git
