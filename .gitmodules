@@ -4,6 +4,3 @@
 [submodule "themes/hexo-theme-next"]
 	path = themes/hexo-theme-next
 	url = git@github.com:changyukang/hexo-theme-next.git
-[submodule "themes/hexo-theme-noderce"]
-	path = themes/hexo-theme-noderce
-	url = git@github.com:changyukang/hexo-theme-noderce.git
