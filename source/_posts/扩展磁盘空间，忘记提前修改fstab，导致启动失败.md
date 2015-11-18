@@ -1,0 +1,27 @@
+title: 扩展磁盘空间，忘记提前修改fstab，导致启动失败
+layout: post
+comment: true
+date: 2015-07-02 20:18:39
+categories: Archlinux
+tags: [Archlinux,VMware,fstab]
+keywords: fstab,boot
+description: 扩展磁盘空间之前，先修改fstab。
+---
+### 一、问题环境
+
+VM虚拟机，archlinux系统，初期创建时，虚拟机空间分配了15G，由于平时运行在命令行模式，所以内存分配的较小，且host机内存一共两G，也分配不了多少给虚拟机。这样导致的一个问题是：有时候安装软件提示/tmp空间不足，所以后来单独划分了一个区给/tmp。为了开机挂载，修改了fstab，并且将挂载/tmp放在启动顺序第一位。下图注释掉的即为当时加的修改。
+![图1](http://7xoae4.com1.z0.glb.clouddn.com/扩展磁盘空间，忘记提前修改fstab，导致启动失败1.png) 
+
+UUID参数是通过blkid命令获取的，最后一列表示启动顺序。
+
+后来由于磁盘空间不足，将15G扩展到了35G，但是由于原来/分区后就跟着/tmp分区，所以扩展的磁盘空间不能跟/分区合并，只有将/tmp分区删掉，将扩展的空间跟/分区合并后，再重新划分/tmp。这样就导致/tmp分区的UUID值发生了变化，又由于系统启动时第一个加载它，所以找不到该分区，系统启动失败。
+
+### 二、解决方法
+
+1.见本目录下的笔记：fstab错误导致系统启动失败问题解决实战_LinuxChao_新浪博
+使用systemrescuecd，启动后将原来/etc所在分区挂载，修改fstab文件。
+
+2.为了以后避免这种情况，添加的新分区应该放在其它分区后面挂载，以免分区调整导致参数变化，挂载失败的情况发生。
+
+修改后：
+![图2](http://7xoae4.com1.z0.glb.clouddn.com/扩展磁盘空间，忘记提前修改fstab，导致启动失败2.png)
