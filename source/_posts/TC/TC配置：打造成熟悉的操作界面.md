@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2015-02-08 12:08:07
 categories: TC
-tags: [TC,windows,Linux]
+tags: [TC,Windows,Linux]
 keywords: total commander,windows
 description: Config Total Commander to be a familiar Resource Manager.
 ---
@@ -50,9 +50,9 @@ description: Config Total Commander to be a familiar Resource Manager.
 
     这两个一般都不会使用，常用的操作会形成习惯，去工具栏一个一个的查找并点击是效率很低的事。
 
-6. **使用vimdesktop操作tc**
+6. **使用vimdesktop操作TC**
 
-    VimDesktop是一个模拟Vim操作的使用AHK开发的工具，安装之后，就可以像使用Vim一样操作TC，个人非常推荐，拜托了鼠标，操作很流畅。
+    VimDesktop是一个模拟Vim操作的使用AHK开发的工具，安装之后，就可以像使用Vim一样操作TC，个人非常推荐，摆脱了鼠标，操作很流畅。
 
 7. **ctrl-d设置快捷访问目录**
 
