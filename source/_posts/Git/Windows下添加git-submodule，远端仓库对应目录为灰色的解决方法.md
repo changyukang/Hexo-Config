@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2015-01-08 01:01:41
 categories: Git
-tags: [Git,Win]
+tags: [Git,Windows]
 keywords: Git,submodule,windows
 description: Solving Git problems
 ---

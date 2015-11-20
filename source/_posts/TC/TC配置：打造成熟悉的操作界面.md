@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2015-02-08 12:08:07
 categories: TC
-tags: [TC,Win,Linux]
+tags: [TC,Windows,Linux]
 keywords: total commander,windows
 description: Config Total Commander to be a familiar Resource Manager.
 ---

@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2015-07-07 12:31:27
 categories: VMware
-tags: [VMware,snap]
+tags: [VMware,snapshot]
 keywords: vmware,snapshot
 description: VMware disk space compression.
 ---
