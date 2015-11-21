@@ -56,7 +56,7 @@ description: 承接上篇博文：如何保存submodule的修改
 ![图7](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改7.jpg)
 
 
-### 补充说明：
+### 补充说明
 这里的问题是，你的本地如果有多个`CCTree`插件库，那么你提交的仅仅是你操作的那一个，在其他的库里，还是没有修改的，也就是说你`commit`的东西仅在你本地一个目录中。下图可以看到，你右侧提交的并不会影响其它库。这是与`Fork`的区别，`Fork`可以`push`，然后其它库可以更新。
 ![图8](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改8.png)
 
