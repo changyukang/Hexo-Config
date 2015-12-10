@@ -16,24 +16,24 @@ description: 常用短语总结
 5.    try something(it) out        try out the lawn mower    当使用代词时放在短语中间。
 6.    Speak frankly and sincerely: 开诚布公的
 7.    sender/[法]addressor: 发信人； addressee/ recipient：收信人
-8.    over here is ...: 这里是...        over there:：在那里, it's over there.
+8.    over here is ...: 这里是...        over there:：在那里, it is over there.
 9.    go over: 过来. none of my friends can go over.    go over and say hi.
 10.    sleep in：睡过头    I sleeped in on Saturday.
 11.    1.    If Tom says ,'That is a gnarly hat', he means: **c**
 >    a.he hates it    b.he thinks it is ugly    c. he likes it   d.he thinks it is dangerous
     2.    gnarly: (in surf culture) a word meaning very good or excellent, used by young people .
 12.    blame for:  谁的错
->        The investigators decided that a problem with the electrical cables was to blame for the fire.
+>    The investigators decided that a problem with the electrical cables was to blame for the fire.
 13.    filled to capacity: 达到容量
->        Because the train was filled to _____, I had to wait for the next one.
+>    Because the train was filled to _____, I had to wait for the next one.
 14.    list: 船倾斜
->        If a ship lists, it leans to one side.
+>    If a ship lists, it leans to one side.
 >        Walter drank too much on his birthday and as he walked, he _____ to the side like an old sailing ship.
 15.    I vaguely remember... : 模糊的记得
 16.    She goes on to explain... : 继续解释
 17.    for themselves: 做副词短语，自己（主动做什么事） require them to think for themselves.
 18.    think straight：清除的思考
->        I'm so tired, I can't think straight.
+>    I'm so tired, I can't think straight.
 19.    start over: 重新开始    
 20.    cannot be designated as; not deserve the name of ; ：说不上、无所谓
 21.    Thanks in advance: 提前感谢
@@ -77,7 +77,7 @@ description: 常用短语总结
 47.    vice versa:反之亦然
 48.    take the minutes: 做回忆记录
 49.    carry(push)the joke too far at others: 开玩笑过火了
->    Don't carry [ push] the joke too far at others.
+>    Do not carry [ push] the joke too far at others.
 50.   moderate atmosphere: 缓和气氛 
 51.   adequate/ample: just enouth/more than enough
 52.   plain blunt honesty: 朴素、直接、诚实
