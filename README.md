@@ -21,14 +21,11 @@
   3. How to upgrade npm packages  \
     npm install -g npm-check  \
     npm-check  \
-
     npm install -g npm-upgrade  \
-
     npm-upgrade  \
+    ps: not all the packages can be upgrade by runing commands above, so you may need to access the package website and run commands given officially
 
-    ​	ps: not all the packages can be upgrade by runing commands above, so you may need to access the package website and run commands given officially
-
-  4. package-lock.json dependency security vulnerabilities
+  4. package-lock.json dependency security vulnerabilities  \
     This can be solved by upgrade these packages
 
 
