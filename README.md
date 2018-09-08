@@ -28,5 +28,24 @@
   4. package-lock.json dependency security vulnerabilities  \
     This can be solved by upgrade these packages
 
+  5. create a new article  \
+    * hexo new <title> or:
+    * copy and paste md to the directory you create and then add some information below:
+    ```
+    title: Binary Search
+    layout: post
+    comment: true
+    date: 2018-08-15 21:05:12
+    categories: [Programming,Algorithm_and_Data_Structure,Python,First_Bundle_of_Algorithm]
+    tags: [Python,Algorithm,Data Structure]
+    keywords: binary_search
+    description: About algorithm complexity and binary search
+    ---
+    **ps: there should be an space after each semicolon above**
+    ```
+  6. format instruction  \
+    * for "categories" above, they are directories, so connect the name(multiple words) with "_"
+    * for "tags" above, they are descriptions and should be user friendly and readable, so use " " to connect the name with multiple words
 
-
+  7. images  \
+    Images in folders local or online are all accepted. (for local folders, package "hexo-asset-image" is used)
