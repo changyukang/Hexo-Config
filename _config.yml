@@ -82,3 +82,10 @@ deploy:
   #repository: https://github.com/changyukang/changyukang.github.io.git
   repository: git@github.com:changyukang/changyukang.github.io.git
   branch: master
+
+admin:
+  username: kiwichangyu
+  password_hash: 
+  secret: Welcom, Jason
+  deployment: './admin_script/hexo-generate.sh'
+  # expire: 60*1
