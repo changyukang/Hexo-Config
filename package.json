@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "cryptiles": "^4.1.2",
     "ejs": "^2.6.1",
     "hexo": "^3.7.1",
     "hexo-admin": "^2.3.0",
