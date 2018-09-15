@@ -85,7 +85,7 @@ deploy:
 
 admin:
   username: kiwichangyu
-  password_hash: 
+  password_hash: $2a$10$rVONP/FLFVjFXAvFgpeUwOI3M5XUs5/jtazkVoZPLV0AkFfq057Kq
   secret: Welcom, Jason
   deployment: './admin_script/hexo-generate.sh'
   # expire: 60*1
