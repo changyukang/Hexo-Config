@@ -20,7 +20,7 @@ description: Solving Git problems
     ```
     这会导致远程仓库对应目录为灰色，无法点击:
 
-    ![目录无法链接至对应仓库](http://7xoae4.com1.z0.glb.clouddn.com/2.png)
+    ![目录无法链接至对应仓库](2.png)
 
 1. 修改目录分隔符，保持与Linux一致
 
@@ -35,4 +35,4 @@ description: Solving Git problems
     ```
     submodule建立成功：
 
-    ![submodule建立成功](http://7xoae4.com1.z0.glb.clouddn.com/4.png)
+    ![submodule建立成功](4.png)
