@@ -18,6 +18,6 @@ description: Jump to the address bar and search bar quickly.
 >2. `Ctrl+e/k`:快速跳转到搜索栏。
 
 那我最终根据实际使用情况，设置如下：
-![图1](TC自定义快捷键：使用%20Ctrl%20+%20k%20或%20Alt%20+%20d%20访问地址栏1.png)
+![图1](TC自定义快捷键：使用Ctrl_k或Alt_d访问地址栏1.png)
 
 设定后就可以方便的使用ctrl+k快速定位TC的地址栏了，其中`cm_EditPath`就是定位到地址栏进行编辑的意思。
