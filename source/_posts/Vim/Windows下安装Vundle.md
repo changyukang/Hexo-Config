@@ -14,7 +14,7 @@ description: How to install vundle in Windows operating system.
 ### 安装过程
 
 当前Vundle正在进行接口变更：
-![图1](http://7xoae4.com1.z0.glb.clouddn.com/Windows下安装Vundle1.png)
+![图1](Windows下安装Vundle1.png)
 
 git路径和目录结构已经有了变化，安装需要根据官方的指南进行。
 
@@ -53,6 +53,6 @@ git路径和目录结构已经有了变化，安装需要根据官方的指南�
     ```
 
 其它的不变，列在下面，这个在官方指南中可以找到，其中下面的一部分是插件示例，可以按需要安装：
-![图2](http://7xoae4.com1.z0.glb.clouddn.com/Windows下安装Vundle2.png)
+![图2](Windows下安装Vundle2.png)
 
 安装完后，执行BundleInstall后，会在%USERPROFILE%下生成.vim目录，这里存放着下载的插件。

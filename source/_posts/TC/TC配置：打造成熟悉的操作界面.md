@@ -33,14 +33,14 @@ description: Config Total Commander to be a familiar Resource Manager.
 3. **选中条目的颜色**
 
     背景底色（设置为蓝色），与Windows或Linux资源管理器保持统一。
-    ![图1](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面1.png)
+    ![图1](TC配置：打造成熟悉的操作界面1.png)
 
 4. **使用插件**
 
     这里仅包括最常使用的快速搜索、打开pdf、music等。
 
     搜索设置：
-    ![图2](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面2.png)
+    ![图2](TC配置：打造成熟悉的操作界面2.png)
 
     这样设置后，再使用搜索插件`tcmatch`，使得只有匹配的项显示，不匹配的项不显示。
 
@@ -57,20 +57,20 @@ description: Config Total Commander to be a familiar Resource Manager.
 7. **ctrl-d设置快捷访问目录**
 
     ctrl-d是TC的神技，一定要好好利用，将经常使用的目录\网站\软件，等等一切可以想到的，都可以添加进来，但是前提是经常使用的，不然记不住快捷键还不如去find&hit。
-    ![图3](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面3.png)
+    ![图3](TC配置：打造成熟悉的操作界面3.png)
 
 8. **实时刷新设置**
 
     当添加一个文件到目录后，我们希望能立刻看到结果，所以要开启实时刷新。
-    ![图4](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面4.png)
+    ![图4](TC配置：打造成熟悉的操作界面4.png)
 
 9. **标签选项**
 
     一般来说，我喜欢只能启动一个TC，一个足够了，并且将经常点击的最近使用的目录固定为标签；而为了目录名称太长时不至于显示补全，所以设置为多行标签。
-    ![图5](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面5.png)
+    ![图5](TC配置：打造成熟悉的操作界面5.png)
 
 10. **显示叠层图标**
 
     如果你使用SVN，那么目录中会有状态提示，可以看到目录中文件是否被修改，但是如果不经配置，这是看不到的，所以，要显示叠层图标。
-    ![图6](http://7xoae4.com1.z0.glb.clouddn.com/TC配置：打造成熟悉的操作界面6.png)
+    ![图6](TC配置：打造成熟悉的操作界面6.png)
 

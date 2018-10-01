@@ -27,38 +27,38 @@ description: 承接上篇博文：如何保存submodule的修改
 >*插件目录：*`vim`使用`Vundle`安装插件，插件的形式都是一个一个`git`库，这些库于是就都在`dotfile`库了。
 
 现在，对`vim`插件`CCTree`做一个简单修改，然后在上级目录`git add`，出现“未跟踪的内容”：
-![图1](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改1.jpg)
+![图1](进一步思考：如何保存github托管的vim插件的个人修改1.jpg)
 
 请知：这里即使用`git add`.都是无法添加跟踪的。
 
 下面，进入`CCTree`目录，执行`git status`，可看到修改，然后使用`git add`，将它缓存起来：
-![图2](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改2.jpg)
+![图2](进一步思考：如何保存github托管的vim插件的个人修改2.jpg)
 
 可见，在插件目录是可以`git add`的。
 
 接下来，将修改提交，只是`commit`(别人的库，无权`push`)：
-![图3](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改3.jpg)
+![图3](进一步思考：如何保存github托管的vim插件的个人修改3.jpg)
 
 
 再次回到上级目录`git status`查看，发现`CCTree`已经变为“新提交”状态：
-![图4](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改4.jpg)
+![图4](进一步思考：如何保存github托管的vim插件的个人修改4.jpg)
 
 
 然后`git add`，可以缓存成功啦：
-![图5](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改5.jpg)
+![图5](进一步思考：如何保存github托管的vim插件的个人修改5.jpg)
 
 
 将其`commit`，成功：
-![图6](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改6.jpg)
+![图6](进一步思考：如何保存github托管的vim插件的个人修改6.jpg)
 
 
 接下来`push`到自己的`dotfile`远端仓库也是ok的，再次查看，可以看到`CCTree`无法跟踪的问题已经解决了：
-![图7](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改7.jpg)
+![图7](进一步思考：如何保存github托管的vim插件的个人修改7.jpg)
 
 
 ### 补充说明
 这里的问题是，你的本地如果有多个`CCTree`插件库，那么你提交的仅仅是你操作的那一个，在其他的库里，还是没有修改的，也就是说你`commit`的东西仅在你本地一个目录中。下图可以看到，你右侧提交的并不会影响其它库。这是与`Fork`的区别，`Fork`可以`push`，然后其它库可以更新。
-![图8](http://7xoae4.com1.z0.glb.clouddn.com/进一步思考：如何保存github托管的vim插件的个人修改8.png)
+![图8](进一步思考：如何保存github托管的vim插件的个人修改8.png)
 
 
 于是：如果使用`Fork`，你可以把所有插件库都`Fork`下来，然后在`vimrc`中的`vundle`安装处，全部改成你自己`Fork`下来的库地址。于是你可以对他们`commit`，然后`push`。也不用添加`submodule`。
