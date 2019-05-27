@@ -2,9 +2,9 @@ title: 6 章：并查集（Union Find）-- 特殊的树形结构
 layout: post
 comment: true
 date: 2019-05-15 14:11:04
-categories: [Programming,Algorithm_and_Data_Structure,C++,Play_Data_Structure]
+categories: [Programming,Algorithm_and_Data_Structure,C++,Play_Algorithm_and_Data_Structure]
 tags: [C++,Algorithm,Data Structure]
-keywords: Array,Tree
+keywords: Union Find,Tree
 ---
 
 # 6 章：并查集（Union Find）-- 特殊的树形结构
