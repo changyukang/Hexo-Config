@@ -1,0 +1,644 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="bcffef689668492a" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Never late to study" />
+
+
+
+  <meta name="keywords" content="Git,Vim,Hexo," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="About Fork and Submodule">
+<meta name="keywords" content="Submodule,Fork">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何保存submodule的修改">
+<meta property="og:url" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/index.html">
+<meta property="og:site_name" content="Kiwi-Jason">
+<meta property="og:description" content="About Fork and Submodule">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法1.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法2.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法3.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法4.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法5.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法6.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法7.png">
+<meta property="og:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法8.png">
+<meta property="og:updated_time" content="2018-10-01T14:36:02.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何保存submodule的修改">
+<meta name="twitter:description" content="About Fork and Submodule">
+<meta name="twitter:image" content="http://yoursite.com/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法1.png">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 如何保存submodule的修改 | Kiwi-Jason </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Kiwi-Jason</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post  " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              如何保存submodule的修改
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-01-10T20:57:10+10:30" content="2015-01-10">
+            2015-01-10
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Git/" itemprop="url" rel="index">
+                  <span itemprop="name">Git</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody">&nbsp;&nbsp;&nbsp;&nbsp;<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>个人使用<code>Vundle</code>管理插件，并且安装了<code>oh-my-zsh</code>，因为这种安装方式是<code>git clone</code>原作者的库到本地，所以可以实时跟踪作者的更新；我在使用插件时，会做一些个性化修改，但是这些修改不能提交到<code>github</code>，只能本地保存；</p>
+<p>更进一步的需求是：将<code>.vim</code>使用<code>dotfiles</code>方式托管到<code>github</code>上，并且将自己对于插件的修改也托管到<code>github</code>上去;这样就要在<code>dotfiles</code>下建个仓库，并<code>push</code>到<code>github</code>上。</p>
+<p>出现的问题：上述想法在实施的过程中，无法全部<code>git add</code>，个人做过修改的插件（每个插件目录都是一个<code>git</code>库），就会出现无法跟踪，所有<code>git add</code>的方式，都添加不进去。那这样我个人做的修改就无法<code>push</code>到<code>github</code>远端仓库了。</p>
+<h3 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h3><p>首先想到使用<code>submoudle</code>的方式来添加插件。</p>
+<p>插件本身就是一个<code>git</code>库，将其以子模块的方式添加进去，但是还有个问题，子模块的库是人家原作者的，你无权<code>push</code>，修改还是在本地。</p>
+<p>那又想起一个方法：将原作者的库<code>fork</code>下来，添加子模块时，添加自己<code>fork</code>下来的库，那么你对这个库是有权<code>push</code>的，那么你把修改<code>push</code>到这个库上，并不会影响原作者的主分支，这样就实现了将你的<code>.vim</code>里面<code>Vundle</code>安装的插件以<code>dotfiles</code>托管到<code>github</code>的目的，并且将自己的修改<code>push</code>到了远端仓库。更进一步，如果你的个人配置真心不错，你还可以<code>pull request</code>，请原作者审核一下，将你的修改<code>merge</code>过去，为开源做贡献！</p>
+<h4 id="添加子模块遇到的问题"><a href="#添加子模块遇到的问题" class="headerlink" title="添加子模块遇到的问题"></a>添加子模块遇到的问题</h4><p>想法是美好的，现实却很残酷，添加过程各种问题。</p>
+<p>首先，<code>windows</code>下添加的子模块在远端仓库对应目录为灰色，无法链接，这个原因已在<a href="http://changyukang.github.io/2015/01/08/Windows%E4%B8%8B%E6%B7%BB%E5%8A%A0git-submodule%EF%BC%8C%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E5%AF%B9%E5%BA%94%E7%9B%AE%E5%BD%95%E4%B8%BA%E7%81%B0%E8%89%B2%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">“<code>Windows</code>下<code>submodule</code>添加失败的解决方法”</a>里描述过了。</p>
+<p>其次，添加的明明是自己<code>fork</code>的库，但是在对应插件目录<code>git remote -v</code>看到的却还是原作者的仓库地址。<br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法1.png" width="520" alt="图1" align="center"><br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法2.png" width="520" alt="图2" align="center"></p>
+<p>后来想想，可能是原来自己用作者的库地址添加过一次<code>submodule</code>，已经有了残留，实际上，这种情况下再添加你自己<code>fork</code>的库为<code>submodule</code>时，会有提示：</p>
+<p><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法3.png" width="520" alt="图3" align="center"></p>
+<p>提示已经有一个<code>remote</code>在你想添加为子模块的本地目录中，并且如果想使用那个，就用<code>--force</code>选项，如果想自己定义，就用<code>--name</code>。确实，自己原来添加过一次，并且原来的目录中<code>git remote -v</code>可以看到<code>origin</code>地址是原作者的库地址。怎么办呢？使用<code>--name</code>选项似乎也不行，添加不成功，不知道是否书写方法不对？<br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法4.png" width="520" alt="图4" align="center"></p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ol>
+<li><p>去那个目录，<code>git remote remove origin</code>，将那个<code>origin</code>删除，可单是这个似乎不行；<br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法5.png" width="500" alt="图5" align="center"><br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法6.png" width="500" alt="图6" align="center"></p>
+<p> 这样搞了之后，引出上面<code>git directory *** is found locally with remote: origin</code>的问题。</p>
+</li>
+<li><p>删除<code>.git/modules/mysubmodulefolder</code>（这里替换成上面提示的已经有<code>orgin</code>地址的那个目录，也就是你想添加子模块到的目录）<br>删除后，再根据删除<code>submodule</code>的方法，将各种配置清理干净（主要是<code>.gitmodules</code>和<code>.git/config</code>里的<code>submodule</code>信息以及子模块的存放目录），就可以再次添加<code>submodule</code>了，这次大功告成。</p>
+</li>
+</ol>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>另外提一点，子模块提交和<code>push</code>都要在子模块所在目录进行：<br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法7.png" width="520" alt="图7" align="center"></p>
+<p>子模块修改提交成功后，返回你自己的库，<code>git add</code>，发现可以添加上了：<br><img src="/2015/01/10/Git/如何保存submodule的修改/添加submodule并且可以保存自己的修改的方法8.png" width="520" alt="图8" align="center"></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag">#Git</a>
+          
+            <a href="/tags/Vim/" rel="tag">#Vim</a>
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/01/16/Git/进一步思考：如何保存github托管的vim插件的个人修改/" rel="prev">进一步思考：如何保存github托管的vim插件的个人修改</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/01/08/Git/Windows下添加git-submodule，远端仓库对应目录为灰色的解决方法/" rel="next">Windows下submodule添加失败的解决方法</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png" alt="Jason" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jason</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Never late to study</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决过程"><span class="nav-number">2.</span> <span class="nav-text">解决过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加子模块遇到的问题"><span class="nav-number">2.1.</span> <span class="nav-text">添加子模块遇到的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">2.2.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+
+<div class="powered-by">
+  本博客由基于NodeJS的 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

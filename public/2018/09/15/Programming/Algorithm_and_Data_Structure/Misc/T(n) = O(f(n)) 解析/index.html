@@ -1,0 +1,648 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="bcffef689668492a" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Never late to study" />
+
+
+
+  <meta name="keywords" content="algorithm,O(f(n))," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="about algorithm and O(f(n))">
+<meta name="keywords" content="algorithm complexity, O(f(n))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T(n) = O(f(n)) 解析">
+<meta property="og:url" content="http://yoursite.com/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n) = O(f(n)) 解析/index.html">
+<meta property="og:site_name" content="Kiwi-Jason">
+<meta property="og:description" content="about algorithm and O(f(n))">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n)%20=%20O(f(n))%20解析/media/15368194954352/15368198352876.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n)%20=%20O(f(n))%20解析/media/15368194954352/15368198805892.jpg">
+<meta property="og:updated_time" content="2018-09-14T18:30:21.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="T(n) = O(f(n)) 解析">
+<meta name="twitter:description" content="about algorithm and O(f(n))">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n)%20=%20O(f(n))%20解析/media/15368194954352/15368198352876.jpg">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> T(n) = O(f(n)) 解析 | Kiwi-Jason </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Kiwi-Jason</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post  " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              T(n) = O(f(n)) 解析
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2018-09-15T03:02:00+09:30" content="2018-09-15">
+            2018-09-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Algorithm-and-Data-Structure/" itemprop="url" rel="index">
+                  <span itemprop="name">Algorithm_and_Data_Structure</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody">&nbsp;&nbsp;&nbsp;&nbsp;<h1 id="T-n-O-f-n-解析"><a href="#T-n-O-f-n-解析" class="headerlink" title="T(n) = O(f(n)) 解析"></a>T(n) = O(f(n)) 解析</h1><p>$f(n)$ 是关于问题规模 n 的一个函数, 为基本语句执行次数关于 n 的一个函数。这里 n 表示的是待处理数据的个数，而$f(n)$则是一套语句执行的次数（times）. 以此可以画出一条当 n 从小大时语句执行次数的函数曲线。</p>
+<p>times 与 T是正相关的，执行次数就相当于时间（只是在不不同机器不同语言下，相同次数时间不等，所以不是精确的对应时间 – 算法复杂度描述的也不是具体的时间，而是问题规模 n 变大之后，时间的变化趋势），在相同问题下（同样规模）， times越多，$T(n)$就越大。</p>
+<ol>
+<li>另附：典型函数复杂度曲线<br><img src="/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n) = O(f(n)) 解析/media/15368194954352/15368198352876.jpg" alt="-w547"><br><img src="/2018/09/15/Programming/Algorithm_and_Data_Structure/Misc/T(n) = O(f(n)) 解析/media/15368194954352/15368198805892.jpg" alt="-w539"></li>
+<li><p>复杂度评估</p>
+<ul>
+<li><p>以冒泡排序为例，要经历n-1次外部循环，对于每次外部循环，内部循环要执行 n-i-1次。整体来说，对于一个倒序数组（最差情况），内部交换语句执行的次数依次为：n-1, n-2, …, 1，所以时间复杂度为$O(n^2)$. 对于最好情况，数组已经有序了，此时按照下面代码，内部循环还是要进行 n-i-1次两两比较（虽然没有发生交换），所以这部分时间复杂度也是$O(n)$,再算上外部的 n-1次循环，所以整体也是$O(n^2)$. 那是不是冒泡排序最好情况就是$O(n^2)$了呢？不是的，这跟代码有关，下面的代码确实是这样的，但是进行优化后，就可以避免这种外部的循环执行那么多次，对于有序的序列，加上一个标志位，就可以在第一次两两比较时确定数组有序，循环就可以终止了，代码参见（2），相关文章参见：<a href="https://blog.csdn.net/spaceyqy/article/details/39392593" target="_blank" rel="noopener">冒泡排序最好情况下时间复杂度</a>：</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bubble</span> <span class="keyword">extends</span> <span class="title">Sorting</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    	@Override</span><br><span class="line">    	<span class="keyword">public</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] <span class="keyword">array</span>)&#123;</span><br><span class="line">    </span><br><span class="line">    		<span class="keyword">int</span> temp;</span><br><span class="line">    </span><br><span class="line">    		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; <span class="keyword">array</span>.length<span class="number">-1</span>; i++)&#123;</span><br><span class="line">    </span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt; <span class="keyword">array</span>.length-i<span class="number">-1</span>; j++)&#123;</span><br><span class="line">    </span><br><span class="line">                    <span class="comment">//bubble to the right</span></span><br><span class="line">                    <span class="comment">//for ascending sorting, the bigger one bubble to the right</span></span><br><span class="line">                    <span class="comment">//for descending sorting, the smaller one bubble to the right</span></span><br><span class="line">                    <span class="keyword">if</span>(<span class="keyword">array</span>[j] &gt; <span class="keyword">array</span>[j+<span class="number">1</span>])&#123;</span><br><span class="line">                        temp = <span class="keyword">array</span>[j];</span><br><span class="line">                        <span class="keyword">array</span>[j] = <span class="keyword">array</span>[j+<span class="number">1</span>];</span><br><span class="line">                        <span class="keyword">array</span>[j+<span class="number">1</span>] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">    		<span class="keyword">return</span> <span class="keyword">array</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    （<span class="number">2</span>）</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> void bubbleSort(<span class="keyword">int</span> arr[]) &#123;</span><br><span class="line">        <span class="keyword">boolean</span> didSwap;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, len = arr.length; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            didSwap = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j + <span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                    swap(arr, j, j + <span class="number">1</span>);</span><br><span class="line">                    didSwap = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">if</span>(didSwap == <span class="keyword">false</span>)</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于数组遍历，一个循环基本语句运行 n 次，所以是$O(n)$ 复杂度；同理，对于二重循环遍历，基本语句执行次数为$n*n = n^2$次，所以复杂度为$O(n^2)$. 上面的Bubble虽然也是两重循环，但是由于第二层循环并不是每次都执行基本语句（交换数组元素），所以它的时间跟这里的二重循环遍历是有差异的，但是整体来讲，它们都是$O(n^2)$.</p>
+</li>
+<li><p>对于二分查找等，每次数据砍掉一半，这种算法的时间复杂度是$O(log_2^n)$, 如果外边再套一层 for 循环，那么它的时间复杂度将是：$O(nlog_2^n)$.</p>
+<ul>
+<li><p>$O(log_2^n)$ 和 $O(log_{10}^n)$ 即$O(lg^n)$本质是一样的，因为这两个对数之间相差的是常数倍（根据对数运算法则），常数阶对于算法复杂度没有太大影响。</p>
+</li>
+<li><p>算法复杂度分析(二分查找)</p>
+<p>  <strong>About complexity</strong></p>
+<p>  Take binary search for example. The complexity of binary search is $log_2^n$, but what does it mean? For binary search, every time the remaining number will be half of the original number($n/2/2/2/2/2…/2 == n/2^t$) until the number equals 1. So the the search times is the number of 2 (that is, the number of the operation of dividing 2) . ($log_2^n$) is just exactly the times(t) of this operation. So the result of $log_2^n$ represents the operation times. The operation times also stands for the running time of the algorithm.<br>  ps: The complexity is the “running times” of the program and it is also the “running time” of the program.</p>
+</li>
+</ul>
+</li>
+<li>对于归并（Merge sorting）排序，每次将待排序数组<strong>分成两部分</strong>（归并排序每次两两归并，一共有logN趟，而每趟的时间复杂度为O(N)），这个两部分的划分是以数组索引来确定的，所以不管数组是否有序或者倒序，或者乱序，都不影响分组。有这个一分为二的操作，那么就有$log_2^n$的因子；对于对应的每次归并操作，都要遍历两个数组元素，比较其大小，时间复杂度为$O(n)$. 所以归并排序时间复杂度最差情况也为$O(nlog_2^n)$.</li>
+<li>对于快速（Quick sorting）排序，也是将待排序数组分成两部分，但是这个划分是有区别的，对于有序或者倒叙数组，每次划分实际上都只得到一个数组（pivot 左边数组为空或者右边数组为空）这时并没有实现一分为二的目的，所以递归次数并不是 $log_2^n$, 而是$n$, 再算上每次再以 pivot 值将数组一分为二时，需要从左和从右双向扫描数组（实现大于 pivot 的元素放在 pivot 右边，小于 pivot 的元素放在 pivot 左边），所以乘以$n$,所以在有序或者倒叙情况下，快排的时间复杂度是$O(n^2)$; 当为乱序的情况时，数组可以一分为二，此时时间复杂度为$O(nlog_2^n)$.</li>
+<li>对于插入排序(Insertion sorting), 要经历从第二个元素开始到最后一个元素的遍历，时间复杂度为$O(n)$，并且对于每一次遍历,要将选中的元素与其前面的所有元素进行一轮比较（时间复杂度也为$O(n)$），所以插入排序时间复杂度为$O(n^2)$; 而对于最好的情况，数组已经有序时（包括数组中所有元素值都一样的情况），此时虽然也要经历 n-1 次遍历（$O(n)$），<del>并且对于每次遍历，也需要将其与它前面的所有元素比较，但是因为数组有序，所以不需要进行 swap 的操作，但是这不意味着这部分的时间复杂度是$O(1)$,因为还是要进行大小比较，只是不交换罢了，所以这部分时间复杂度还是$O(n)$</del>，对于每次遍历，所取的要进行比较的那个元素前面已经是有序的了，所以找到一个小于等于改元素值的元素，就不需要再往左比较了。那么最好情况下，数组有序或者元素相同，那么每次遍历到的那个元素只需要跟它前面的一个元素比较就会发现它本身就是最大的，所以循环就跳出了，故此这部分的时间复杂度是$O(1)$,所以插入排序最好情况下时间复杂度为$O(n)$.<br>相关文章参见：<a href="https://www.cnblogs.com/jiqingwu/p/insertion_sort_algorithm.html" target="_blank" rel="noopener">插入排序及其复杂度分析</a></li>
+</ul>
+</li>
+<li><p>补充：空间复杂度</p>
+<ul>
+<li>空间复杂度表示为$S(n) = O(f(n))$， 其中f(n)为语句关于 n 的所占存储空间的函数。</li>
+<li>除了存储程序、输入数据之外（这些与算法无关）， 还有在算法执行过程中需要分配的辅助空间，空间复杂度考虑的是这一块辅助空间随问题规模 n 变化的趋势。如果一个算法在运行时，开辟的辅助空间与问题规模无关或是一个常数，那么这个算法的空间复杂度为$O(1)$.</li>
+</ul>
+</li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
+          
+            <a href="/tags/O-f-n/" rel="tag">#O(f(n))</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/13/Programming/Algorithm_and_Data_Structure/C++/Play_Algorithm_and_Data_Structure/7-10章：Basic Things of Graph - 最短路径、寻路、连通分量、最小生成树/" rel="prev">7-10章：Basic Things of Graph - 最短路径、寻路、连通分量、最小生成树</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/08/Programming/Algorithm_and_Data_Structure/Misc/递归（recursion）和递推（iteration）的区别（differences）/" rel="next">Recursion and iteration (递归、递推和迭代)</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png" alt="Jason" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jason</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Never late to study</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#T-n-O-f-n-解析"><span class="nav-number">1.</span> <span class="nav-text">T(n) = O(f(n)) 解析</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+
+<div class="powered-by">
+  本博客由基于NodeJS的 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

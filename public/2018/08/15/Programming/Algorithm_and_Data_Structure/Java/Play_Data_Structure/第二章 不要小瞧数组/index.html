@@ -1,0 +1,735 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="bcffef689668492a" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Never late to study" />
+
+
+
+  <meta name="keywords" content="Algorithm,Data Structure,Java," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="To code an Arraylist">
+<meta name="keywords" content="Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. Do Not Look Down on Array(不要小瞧数组)">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/index.html">
+<meta property="og:site_name" content="Kiwi-Jason">
+<meta property="og:description" content="To code an Arraylist">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343119058227.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343129631606.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343170251473.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343328109202.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343328794105.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343330095261.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343346830237.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343353811297.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343362625206.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343369036870.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343370014435.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343370170343.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343370627761.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343371196359.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343380242711.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343382359434.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343386771385.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343390107329.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343390314196.jpg">
+<meta property="og:updated_time" content="2018-09-08T02:52:36.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2. Do Not Look Down on Array(不要小瞧数组)">
+<meta name="twitter:description" content="To code an Arraylist">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章%20不要小瞧数组/media/15343102031344/15343119058227.jpg">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 2. Do Not Look Down on Array(不要小瞧数组) | Kiwi-Jason </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Kiwi-Jason</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post  " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              2. Do Not Look Down on Array(不要小瞧数组)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2018-08-15T14:16:04+09:30" content="2018-08-15">
+            2018-08-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/" itemprop="url" rel="index">
+                  <span itemprop="name">Programming</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/" itemprop="url" rel="index">
+                  <span itemprop="name">Algorithm_and_Data_Structure</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/Java/" itemprop="url" rel="index">
+                  <span itemprop="name">Java</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/Java/Play-Data-Structure/" itemprop="url" rel="index">
+                  <span itemprop="name">Play_Data_Structure</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody">&nbsp;&nbsp;&nbsp;&nbsp;<h1 id="第二章-不要小瞧数组"><a href="#第二章-不要小瞧数组" class="headerlink" title="第二章 不要小瞧数组"></a>第二章 不要小瞧数组</h1><h2 id="2-1-使用-Java-中的数组"><a href="#2-1-使用-Java-中的数组" class="headerlink" title="2-1 使用 Java 中的数组"></a>2-1 使用 Java 中的数组</h2><p>数组三种定义方式：</p>
+<ol>
+<li>int[] arr = new int[10]; 之后使用 for 循环为每个元素赋初值</li>
+<li>int[] arr = new int[]{100, 99, 66};</li>
+<li>int[] arr = {100, 99, 66}<br>注：1、2中分配空间在堆中，3分配空间在栈中</li>
+</ol>
+<h2 id="2-2-二次封装属于我们自己的数组"><a href="#2-2-二次封装属于我们自己的数组" class="headerlink" title="2-2 二次封装属于我们自己的数组"></a>2-2 二次封装属于我们自己的数组</h2><p><strong>数组优点：</strong>随机读取，快速查询，所以数组最好应用于“索引有语意”的情况，比如索引表示学号，那么 scores[2]就是获取学号为2的同学的分数。</p>
+<p>但并非都是“索引有语意”最好，比如使用身份证号查询某人的工资，那么如果以身份证作索引，就要开辟很大的数组空间，其中很大一部分是浪费的。此时可以通过一个函数对这个初始索引做进一步处理，三列在一个范围内，并且尽量避免重复，然后把这个函数的结果作为索引–类似哈希表（散列表）</p>
+<p>数组没有语意的情况下，会有以下一些问题：</p>
+<ol>
+<li>如何表示没有元素？</li>
+<li>如何添加和删除元素？</li>
+<li>… …<br>这些问题在 Java 提供的数组中是没有这些方法的，所以要基于 Java 的数组，二次封装我们自己的数组类<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343119058227.jpg" alt="-w487"></li>
+</ol>
+<p>capacity 是这个数组的容量，size是实际存放的元素个数，所以后续需要维护 size。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//构造函数，传入数组的容量 capacity 构造 Array</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10</span></span><br><span class="line">    <span class="function">putlic <span class="title">Array</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//获取数组中的元素个数  </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取数组的容量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCapacity</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 返回数组是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-向数组中添加元素"><a href="#2-3-向数组中添加元素" class="headerlink" title="2-3 向数组中添加元素"></a>2-3 向数组中添加元素</h2><ol>
+<li>想数组末尾添加元素<br> 初始化 size = 0；<br> 向数组中添加元素就相当于在 size 位置添加元素，加入后，size 需要自增。</li>
+<li><p>向第 index 个位置插入元素<br> <img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343129631606.jpg" alt="-w470"><br>需要先把88，99，100依次往后挪，然后把77放入索引为1的位置，之后 size++。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//构造函数，传入数组的容量 capacity 构造 Array</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">            size = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10</span></span><br><span class="line">        <span class="function">putlic <span class="title">Array</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//获取数组中的元素个数  </span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取数组的容量</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCapacity</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> data.length;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回数组是否为空</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向数组所有元素后添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Addlast failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[size] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//有了下面这个在 index 位置添加元素的函数 add，那么上面 addLast 就可以复用add 这个函数了，下面给出重新实现：</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//向最后一个位置添加元素就是向第 size 个位置添加元素，size 始终指向最后一个元素的后一个空位置</span></span><br><span class="line">            add(size, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//同理，可以借助 add 实现 addFirst</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//在开头添加就是在索引为0处添加</span></span><br><span class="line">            add(<span class="number">0</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//向第 index个位置添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//1. 因为 size 初始值为0，指向数组第一个位置，与初始下标0一致，所以最后一个元素是 arr[size]而非 arr[size - 1];</span></span><br><span class="line">            <span class="comment">//2. 如果 index 取比 size大的值，说明数组中的元素将不会是紧密排列的，中间会有空置未用的位置</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> ||  index &gt; size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size"</span>);</span><br><span class="line">            &#125;   </span><br><span class="line">            <span class="comment">//从最后一个位置的元素（size-1）开始，依次往后挪一个位置        </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>; i&gt;=index; i--)&#123;</span><br><span class="line">            data[i+<span class="number">1</span>] = data[i]; </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[index] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-4-数组中查询和修改元素"><a href="#2-4-数组中查询和修改元素" class="headerlink" title="2-4 数组中查询和修改元素"></a>2-4 数组中查询和修改元素</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//构造函数，传入数组的容量 capacity 构造 Array</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">            size = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10</span></span><br><span class="line">        <span class="function">putlic <span class="title">Array</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//获取数组中的元素个数  </span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取数组的容量</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCapacity</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> data.length;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回数组是否为空</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向数组所有元素后添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Addlast failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[size] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有了下面这个在 index 位置添加元素的函数 add，那么上面 addLast 就可以复用add 这个函数了，下面给出重新实现：</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//向最后一个位置添加元素就是向第 size 个位置添加元素，size 始终指向最后一个元素的后一个空位置，size-1始终是数组最后一个元素位置</span></span><br><span class="line">            add(size, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//同理，可以借助 add 实现 addFirst</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//在开头添加就是在索引为0处添加</span></span><br><span class="line">            add(<span class="number">0</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向第 index个位置添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//1. 因为 size 初始值为0，指向数组第一个位置，与初始下标0一致，最后一个元素是arr[size - 1]， 即数组的第一个空位置是 size, 为了保证数组紧密存储，下一个元素必须添加在 size 位置上，否则， 见2</span></span><br><span class="line">            <span class="comment">//2. 如果 index 取比 size大的值，说明数组中的元素将不会是紧密排列的，中间会有空置未用的位置</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> ||  index &gt; size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size"</span>);</span><br><span class="line">            &#125;   </span><br><span class="line">            <span class="comment">//从最后一个位置的元素（size-1）开始，依次往后挪一个位置        </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>; i&gt;=index; i--)&#123;</span><br><span class="line">            data[i+<span class="number">1</span>] = data[i]; </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[index] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//获取 index索引位置的元素</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">            <span class="comment">//保证了不在 size 范围内的元素不会被获取到，保护了数据的安全</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> data[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//获取 index索引位置的元素</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//保证了不在 size 范围内的元素不会被修改，保护了数据的安全</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[index] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//格式化打印数组内容</span></span><br><span class="line">        #Override //如果下面方法名打错，编译器会给出提示，因为目的是覆盖父类的一个方法，而不是新增一个方法</span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">            StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            res.append(String.format(<span class="string">"Array: size = %d, capacity = %d\n"</span>, size, data.length));</span><br><span class="line">            res.append(<span class="string">'['</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">                res.append(data[i]);</span><br><span class="line">                <span class="comment">//如果不是最后一个元素（最后一个元素位置为 size-1）</span></span><br><span class="line">                <span class="keyword">if</span>(i != size -<span class="number">1</span>)&#123;</span><br><span class="line">                    res.append(<span class="string">", "</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            res.append(<span class="string">']'</span>);</span><br><span class="line">            <span class="keyword">return</span> res.toString();</span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">测试一下上面的自定义的数组类</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    Array arr </span>= <span class="keyword">new</span> Array(<span class="number">20</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        arr.addLast(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.add(<span class="number">1</span>, <span class="number">100</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.addFirst(-<span class="number">1</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="2-5-包含、搜索和删除"><a href="#2-5-包含、搜索和删除" class="headerlink" title="2-5 包含、搜索和删除"></a>2-5 包含、搜索和删除</h2><ol>
+<li>判断是否包含元素 e</li>
+<li>查找元素 e 所在的索引</li>
+<li>删除数组中某个元素，删除后需要维护 size的值<br> <img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343170251473.jpg" alt="-w484"></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//构造函数，传入数组的容量 capacity 构造 Array</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">            size = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10</span></span><br><span class="line">        <span class="function">putlic <span class="title">Array</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//获取数组中的元素个数  </span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取数组的容量</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCapacity</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> data.length;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回数组是否为空</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向数组所有元素后添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Addlast failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[size] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有了下面这个在 index 位置添加元素的函数 add，那么上面 addLast 就可以复用add 这个函数了，下面给出重新实现：</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//向最后一个位置添加元素就是向第 size 个位置添加元素，size 始终指向最后一个元素的后一个空位置，size-1始终是数组最后一个元素位置</span></span><br><span class="line">            add(size, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//同理，可以借助 add 实现 addFirst</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//在开头添加就是在索引为0处添加</span></span><br><span class="line">            add(<span class="number">0</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向第 index个位置添加一个新元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果数组满了，不能添加新元素，抛出异常</span></span><br><span class="line">            <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Array is full."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//1. 因为 size 初始值为0，指向数组第一个位置，与初始下标0一致，最后一个元素是arr[size - 1]， 即数组的第一个空位置是 size, 为了保证数组紧密存储，下一个元素必须添加在 size 位置上，否则， 见2</span></span><br><span class="line">            <span class="comment">//2. 如果 index 取比 size大的值，说明数组中的元素将不会是紧密排列的，中间会有空置未用的位置</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> ||  index &gt; size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size"</span>);</span><br><span class="line">            &#125;   </span><br><span class="line">            <span class="comment">//从最后一个位置的元素（size-1）开始，依次往后挪一个位置        </span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>; i&gt;=index; i--)&#123;</span><br><span class="line">            data[i+<span class="number">1</span>] = data[i]; </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[index] = e;</span><br><span class="line">            size ++;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取 index索引位置的元素</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">            <span class="comment">//保证了不在 size 范围内的元素不会被获取到，保护了数据的安全</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> data[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取 index索引位置的元素</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//保证了不在 size 范围内的元素不会被修改，保护了数据的安全</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            data[index] = e;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//查找数组中是否有元素 e</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(data[i] == e)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;                </span><br><span class="line">                &#125;   </span><br><span class="line">                </span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//查找数组中元素 e所在的索引，如果不存在元素 e,则返回-1</span></span><br><span class="line">        <span class="comment">//这个函数存在一个问题，是只能找到一个元素 e，函数就返回了，可以设计一个函数 findAll来完成查找数组中所有 e 的功能</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(data[i] == e)&#123;</span><br><span class="line">                    <span class="keyword">return</span> i;                </span><br><span class="line">                &#125;   </span><br><span class="line">                </span><br><span class="line">                <span class="comment">//一般-1表示无效索引</span></span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//从数组中删除 index位置的元素，返回删除的值</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">            <span class="comment">//仍然先进性索引有效性判断</span></span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is invalid."</span>);    </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//将要删除的元素保留下来，作为函数返回值</span></span><br><span class="line">            <span class="keyword">int</span> ret = data[index];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//从删除的位置后面一个元素开始依次往前挪</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=index+<span class="number">1</span>; i&lt;size; i++)&#123;</span><br><span class="line">                data[i-<span class="number">1</span>] = data[i]; <span class="comment">//依次往前挪</span></span><br><span class="line">            &#125;</span><br><span class="line">            size --; <span class="comment">//删除一个元素，维护一下 size</span></span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//根据上面的删除某一个元素的方法 Remove,可以创建下面的方法：</span></span><br><span class="line">        <span class="comment">//从数组中删除第一个元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeFirst</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> remove(<span class="number">0</span>);</span><br><span class="line">            <span class="comment">//这里实际上应该判断数组是否为空，但是这里不需要，因为在 remove 函数中会进行这个判断</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//从数组中删除最后一个元素</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeLast</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> remove(size - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*本节新增*/</span></span><br><span class="line">        <span class="comment">//从数组中删除某个元素，不是删除指定索引的元素，这里不需要返回那个删除的值，因为参数就是那个值</span></span><br><span class="line">        <span class="comment">//这个函数存在一个问题，是只能删除一个元素 e，函数就返回了，可以设计一个函数 removeAll来完成删除数组中所有 e 的功能</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">            <span class="comment">//当然，可以遍历这个数组，一个一个元素进行比较，找到了就删除，然后返回，但是这里可以复用上面定义的方法</span></span><br><span class="line">            <span class="keyword">int</span> index = find(e);</span><br><span class="line">            <span class="keyword">if</span>(index != -<span class="number">1</span>)&#123;</span><br><span class="line">                remove(index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//格式化打印数组内容</span></span><br><span class="line">        #Override //如果下面方法名打错，编译器会给出提示，因为目的是覆盖父类的一个方法，而不是新增一个方法</span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">            StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            res.append(String.format(<span class="string">"Array: size = %d, capacity = %d\n"</span>, size, data.length));</span><br><span class="line">            res.append(<span class="string">'['</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">                res.append(data[i]);</span><br><span class="line">                <span class="comment">//如果不是最后一个元素（最后一个元素位置为 size-1）</span></span><br><span class="line">                <span class="keyword">if</span>(i != size -<span class="number">1</span>)&#123;</span><br><span class="line">                    res.append(<span class="string">", "</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            res.append(<span class="string">']'</span>);</span><br><span class="line">            <span class="keyword">return</span> res.toString();</span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">测试一下上面的自定义的数组类</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    Array arr </span>= <span class="keyword">new</span> Array(<span class="number">20</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        arr.addLast(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.add(<span class="number">1</span>, <span class="number">100</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.addFirst(-<span class="number">1</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*本节新增*/</span></span><br><span class="line">    arr.remove(<span class="number">2</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.removeElement(<span class="number">4</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.removeFirst();</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-6-使用泛型"><a href="#2-6-使用泛型" class="headerlink" title="2-6 使用泛型"></a>2-6 使用泛型</h2><p>目前为止，创建的数组只能存放整型，可以使用泛型解决这个问题，使得数据结构可以存放任意的数据类型。</p>
+<p>但是在Java中，一个泛型类并不是可以放置任意数据类型的，它不能放置<strong>基本数据类型，只能放置类对象</strong></p>
+<p>基本数据类型：boolean, byte, char, short, int, long, float, double</p>
+<p>但是 Java 中对每个基本数据类型进行了包装，称为包装类，包括Boolean, Byte, Char, Short, Int, Long, Float, Double<br><em>基本数据类型在需要时可以自动转换成它所对应的包装类，包装类也会在需要时自动转换成基本数据类型</em></p>
+<p><strong>下面对上面几节写的数组类代码进行泛型封装：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> E[] data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Array</span><span class="params">(<span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">        <span class="comment">//data = new E[capacity]; //Java 不支持直接 new 一个泛型数组,通过下面的超级类 Object来进行转换</span></span><br><span class="line">        data = <span class="keyword">new</span> （E[]）Object[capacity]; <span class="comment">//先 new 一个 Object 类数组，在进行强制类型转换成泛型数组</span></span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Array is full."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> ||  index &gt; size)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size"</span>);</span><br><span class="line">        &#125;   </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>; i&gt;=index; i--)&#123;</span><br><span class="line">        data[i+<span class="number">1</span>] = data[i]; </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        data[index] = e;</span><br><span class="line">        size ++;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> data[index];</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Get failed. Index is invalid."</span>);   </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        data[index] = e;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> e)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">            <span class="comment">//因为修改成泛型后，这里不再是值的比较了，而是对象，所以要修改成 equals 方法进行比较</span></span><br><span class="line">            <span class="comment">//if(data[i] == e) //值比较</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment">//引用比较</span></span><br><span class="line">        <span class="keyword">if</span>(data[i].equals(e))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;                </span><br><span class="line">        &#125;   </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is invalid."</span>);    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        E ret = data[index];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=index+<span class="number">1</span>; i&lt;size; i++)&#123;</span><br><span class="line">            data[i-<span class="number">1</span>] = data[i]; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//data 数组使用泛型之前存储的都是 int数据，删除一个元素后，后面的依次往前挪，size--之后，虽然最后一个元素前挪后仍然存在，但是因为 size--了，所以是访问不到的，留着也没什么问题。</span></span><br><span class="line">        <span class="comment">//现在改成泛型后，data 数组中存放的都是类对象的引用，删除一个元素后，最后一个元素即 data[size]还指着一个类对象的引用，此时 Java 的垃圾回收机制是不会清理这个对象，因为 data[size]这个引用仍然指向了那个对象，说明那个对象还在使用。</span></span><br><span class="line">        <span class="comment">//如果愿意的话，可以加下面一句，断开这个引用和对象的关系，这样就会被回收机制清理内存了</span></span><br><span class="line">        size --; </span><br><span class="line">        <span class="comment">//下面这个也不是必须的，因为如果再存入一个元素，那么data[size]所指向的对象就换成了新的，原来的就没引用指向它了，这样就会被清理了。这种未使用但是有引用指向它，所以不会被清理内存，但是它会被后续数组的使用被停止原来对象的引用，从而清理掉这个对象的内存，这种类对象叫做 loitering objects，它与内存泄露不是一回事，做的更好的话，可以加上下面这句手动截断引用.</span></span><br><span class="line">        data[size] = <span class="keyword">null</span>; <span class="comment">//loitering objects(闲散、游荡的) != memmory leak</span></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">泛型测试：测试一下上面的泛型封装</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    <span class="comment">//这里要告诉定义的 Array 数组类具体是什么类型，告诉泛型到底使用的是哪种类型,这里不能使用 Array&lt;int&gt;，因为基本数据类型不支持泛型，所以要使用该 int 类型对应的包装类 Integer.</span></span></span><br><span class="line"><span class="function">    Array&lt; Integer&gt; arr </span>= <span class="keyword">new</span> Array&lt;&gt;(<span class="number">20</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        arr.addLast(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//在上面修改 add 函数时，第二个参数从 int e 修改为 E e 了，这里传入100为什么没问题呢？ 因为，E 在具体使用的 main函数中式指定的 Integer 类，它能和其对应的基本数据类型进行自动转换，所以这里100是个 int 类型，所以可以兼容上面指定的 Integer 类型</span></span><br><span class="line">    arr.add(<span class="number">1</span>, <span class="number">100</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.addFirst(-<span class="number">1</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*本节新增*/</span></span><br><span class="line">    arr.remove(<span class="number">2</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.removeElement(<span class="number">4</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    arr.removeFirst();</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> score;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String studentName, <span class="keyword">int</span> studentScore)</span></span>&#123;</span><br><span class="line">        name studentName;</span><br><span class="line">        score = studentScore;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"Student(name: %s, score: %d)"</span>, name, score);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//泛型使用 - 泛型数组承载自定义类对象：定义并使用 Student 类数组</span></span><br><span class="line">        <span class="comment">//数组中存放的是 Student 类对象的引用，类对象在内存中，访问类对象只能通过这个引用</span></span><br><span class="line">        Array&lt;Student&gt; arr = ne Array&lt;&gt;();</span><br><span class="line">        arr.addLast(<span class="keyword">new</span> Student(<span class="string">"Alice"</span>, <span class="number">100</span>));</span><br><span class="line">        arr.addLast(<span class="keyword">new</span> Student(<span class="string">"Bob"</span>, <span class="number">66</span>));</span><br><span class="line">        arr.addLast(<span class="keyword">new</span> Student(<span class="string">"Charlie"</span>, <span class="number">88</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//println函数打印数组元素 Student 类对象时会调用Student 类中的 toString 方法，上面修改默认的toString 方法，就能得到自己想要打印的信息</span></span><br><span class="line">        System.out.println(arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-7-动态数组"><a href="#2-7-动态数组" class="headerlink" title="2-7 动态数组"></a>2-7 动态数组</h2><p>上面自定义二次封装了自己的数组类，实现了很多方法，可以操作这个数组类对象，并且通过泛型封装，使得这个数组类可以存放任意类型的元素。但是本质上它还是使用的一个静态数组。</p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343328109202.jpg" alt="-w487"><br>数组存满后，申请一个更大容量的数组，再把原来数组中的元素拷贝到新数组中；之后把 data 指向新的数组:<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343328794105.jpg" alt="-w481"><br>data 指向 newData 指向的新数组，newData 是在函数里申请的局部变量，使用完就释放掉了，data 是在类中定义的，它的生存周期与这个类相同。并且 data 与原数组使用了引用关系，原数组的内存会被垃圾清理机制清理掉。<br>最终结果为：<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343330095261.jpg" alt="-w605"><br>这是增长元素时，反之，在消减元素时，也可以使用反向的操作，避免空间的浪费。</p>
+<p>这里把前面实现的 add、remove 方法拿过来加以说明，并实现了扩容、缩容函数resize：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加元素时扩容</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(index &lt; <span class="number">0</span> ||  index &gt; size)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Add failed. Require index &gt;= 0 and index &lt;= size"</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(size == data.length)&#123;</span><br><span class="line">        <span class="comment">//throw new IllegalArgumentException("Add failed. Array is full.");</span></span><br><span class="line">        <span class="comment">//数组容量达到 capacity,满了，此时不再抛出异常，而是进行动态扩容</span></span><br><span class="line">        resize(<span class="number">2</span> * data.length); <span class="comment">//这里不要扩容常数个容量，按比例扩容比较合理</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//从最后一个位置的元素（size-1）开始，依次往后挪一个位置        </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>; i&gt;=index; i--)&#123;</span><br><span class="line">    data[i+<span class="number">1</span>] = data[i]; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    data[index] = e;</span><br><span class="line">    size ++;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span></span>&#123;</span><br><span class="line">    <span class="comment">//前面说过，Java 不能 new 一个泛型数组，要经过 new 一个 Object(超级父类)数组类进行转换</span></span><br><span class="line">    这里也可以看到新的扩容的数组是一个局部变量指向的，下面 data 指向这个数组后，退出函数，newData就释放了</span><br><span class="line">    E[] newData = (E[])<span class="keyword">new</span> Object[newCapacity];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">        newData[i] = data[i];       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    data = newData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除元素是缩减容量</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is invalid."</span>);    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    E ret = data[index];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=index+<span class="number">1</span>; i&lt;size; i++)&#123;</span><br><span class="line">        data[i-<span class="number">1</span>] = data[i]; </span><br><span class="line">    &#125;</span><br><span class="line">    size --; </span><br><span class="line">    data[size] = <span class="keyword">null</span>; <span class="comment">//loitering objects</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//缩减容量，因为扩容时按照扩容2倍来计算的，所以缩容时也缩减一半</span></span><br><span class="line">    <span class="keyword">if</span>(size == data.length/<span class="number">2</span>)&#123;</span><br><span class="line">        resize(data.length/<span class="number">2</span>);           </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">泛型测试：测试一下上面的泛型封装</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    <span class="comment">//这里要告诉定义的 Array 数组类具体是什么类型，告诉泛型到底使用的是哪种类型,这里不能使用 Array&lt;int&gt;，因为基本数据类型不支持泛型，所以要使用该 int 类型对应的包装类 Integer.</span></span></span><br><span class="line"><span class="function">    Array&lt; Integer&gt; arr </span>= <span class="keyword">new</span> Array&lt;&gt;(); <span class="comment">//这里不加参数，使用默认容量，默认容量在 Array 类定义的无参构造函数中，是10</span></span><br><span class="line">    <span class="comment">//将这10个数组的空间填满</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        arr.addLast(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//数组满了，再加一个数组，进行扩容函数的测试</span></span><br><span class="line">    arr.add(<span class="number">1</span>, <span class="number">100</span>);</span><br><span class="line">    <span class="comment">//通过打印 arr 数组信息 capacity，可以看到容量变成了20，已经扩容了</span></span><br><span class="line">    System.out.println(arr);</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    arr.addFirst(-<span class="number">1</span>);</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-8-简单的复杂度分析"><a href="#2-8-简单的复杂度分析" class="headerlink" title="2-8 简单的复杂度分析"></a>2-8 简单的复杂度分析</h2><p>大$O$描述的是算法的运行时间和输入数据之间的关系<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343346830237.jpg" alt="-w683"></p>
+<p>为什么要用大 O，叫做 O(n)？<br>忽略常数。上面程序实际时间 $T = c1*n +c2$</p>
+<ul>
+<li><em>c1指的是上面程序中重复执行的指令中一次计算执行的多条指令总共运行的时间。上面程序中就是for 循环里的多条指令执行的时间。</em></li>
+<li><em>c2指的是不是每次都重复执行的代码运行时间之和。上面程序中就是 for 循环外执行的指令，如 int sum = 0;和 return sum;</em></li>
+</ul>
+<p>实际分析算法时把c1和c2都分析出来，没有必要，有时候也是不太可能的。因为不同语言不同实现转换成机器码，对应的机器码指令数可能不同，所以运行时间也不同，即使机器码指令数相同，但是底层 cpu 不同，执行一条指令的时间也是不统一的。所以实际上能知道 c1、c2是几条指令，但是实际上运行时间是很难精确的估计出来具体是多少的。所以算法复杂度分析经常忽略常数。</p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343353811297.jpg" alt="-w295"></p>
+<p>这里有一个疑问：当 n 比较小时，明显第一个比第二个运行时间长，为什么说第二个算法的复杂度更高，性能更差呢？<br><strong>解答</strong>：大O 的表示实际翻译成中文叫：<strong>渐进时间复杂度</strong>，是描述 n 趋近于无穷的情况下，不同算法孰快孰慢的。</p>
+<p>当然这种 n 比较小的时候复杂度较好的特点，也能得到实际的运用。比如：在处理一些小数组的时候，可以使用插入排序替代快速排序或归并排序进行代码优化，可以得到15%左右的性能提升。</p>
+<p>$T = 2<em>n</em>n + 300n + 10$  $O(n^2)$<br>忽略低阶项，在 n 趋近于无穷时，低阶项对结果的影响很小。</p>
+<p>下面分析前面数组类中实现的方法的时间复杂度：<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343362625206.jpg" alt="-w372"></p>
+<p>addLast 操作，不需要移动数组其它元素，所以是常数复杂度，即与问题规模 n 无关;<br>addFirst 操作，每次都要往后移动数组中所有元素，对于问题规模为 n 的，他要移动n 次元素;<br>add 操作，与插入索引位置有关，如果为1，则与 addFirst 相同，如果为 n，那么与 addLast 相同，精确的复杂度计算需要概率论的知识，假设 index 取到1-n 的范围中每一个值的范围相同，那么可以精确计算它的期望，即为时间复杂度。在实际中可以粗略用平均的方法，即 index 取到 n/2，此时的复杂度为平均复杂度，为 O(n/2) = O(n) .</p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343369036870.jpg" alt="-w436"><br>上面添加操作的整体复杂度是 O(n)级别的，因为时间复杂度是计算最糟情况下的复杂度</p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343370014435.jpg" alt="-w663"></p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343370170343.jpg" alt="-w324"><br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343370627761.jpg" alt="-w255"></p>
+<p>上面是对于静态数组时间复杂度的分析，对于动态数组的时间复杂度为：<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343371196359.jpg" alt="-w497"><br>这里可以看到如果已知索引，那么时间复杂度是常数级别的，如果未知索引，那么就是 O(n)级别的。所以索引取的有语意还是比较重要的。<br>另外，对于增和删，它们时间复杂度都是 O(n),因为它里面包含了 resize 函数，这个函数时O(n)的，因为每次扩容，都要把原来数组内容拷贝一遍。这样来看，resize 函数性能较差，影响了增和删函数的性能，但实际上并非这样，完全使用最糟时间复杂度是不合理的，下节将介绍均摊时间复杂度，可以看到，resize 并非性能那么差。</p>
+<h2 id="2-9-均摊复杂度和防止复杂度震荡"><a href="#2-9-均摊复杂度和防止复杂度震荡" class="headerlink" title="2-9 均摊复杂度和防止复杂度震荡"></a>2-9 均摊复杂度和防止复杂度震荡</h2><p>上节说到 resize 函数，实际上，并不是每次都触发这个函数的。<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343380242711.jpg" alt="-w576"><br>添加一个元素是一次操作，上面添加8次，一共触发8次操作，之后添加第9个元素时，会触发一次扩容，要拷贝原数组内容（8次），再添加第9个元素，所以一共进行了17次基本操作。</p>
+<p><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343382359434.jpg" alt="-w669"><br>即每 n+1次操作，触发一次 resize，把 resize 中的2n 次拷贝操作的时间均摊到n+1次的 addLast 操作中，得到平均每次 addLast 有2次基本操作。<br>这意味着，这样均摊时间，时间复杂度是 O(1)的。在这种情况下，计算均摊时间复杂度比计算最坏时间复杂度更有意义。<br>实际工程中，如果一个比较耗时的操作不是每次都触发的时候，这个耗时操作是可以分摊到其它的操作中去的。<br>同样分析 removeLast,最坏情况是O(n)级别的，但是均摊复杂度都是O(1)级别的。</p>
+<p><strong>复杂度震荡</strong>：<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343386771385.jpg" alt="-w625"></p>
+<p>对于之前实现的动态数组的 addLast 和 removeLast 函数，其中都要调用 resize 函数。如果添加一个元素，超出容量，需要扩容，此时触发 resize，执行一次 原数组 n 个元素的拷贝操作；紧接着又删除了一个元素，此时又触发了缩容操作，又要拷贝 n次数据。这种情况依次进行下去，形成震荡。<br>出现问题的原因：removeLast 时 resize 过于着急（Eager）<br>解决方案：Lazy<br>添加时，达到 capacity 后，就开始扩容，但是缩容时，不着急。删除元素后，不着急缩容，等等看是否还有删除操作。当容量剩余数组容量的1/4时，判断后面的空间确实用不到了，此时开始缩容。<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343390107329.jpg" alt="-w597"><br>这里，缩容只是缩容整个数组的一半：即当 size == capacity/4时，才将 capacity 减半。<br><img src="/2018/08/15/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第二章 不要小瞧数组/media/15343102031344/15343390314196.jpg" alt="-w340"></p>
+<p>上述 Lazy 机制的实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt;= size)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Remove failed. Index is invalid."</span>);    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    E ret = data[index];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=index+<span class="number">1</span>; i&lt;size; i++)&#123;</span><br><span class="line">        data[i-<span class="number">1</span>] = data[i]; </span><br><span class="line">    &#125;</span><br><span class="line">    size --; </span><br><span class="line">    data[size] = <span class="keyword">null</span>; <span class="comment">//loitering objects</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Lazy 缩容，解决时间复杂度震荡问题</span></span><br><span class="line">    <span class="comment">//if(size == data.length/2)&#123;</span></span><br><span class="line">    <span class="comment">//这里有个 bug，缩容到最后 data.length 只剩下1时，data.length/2将会出现结果为0的情况</span></span><br><span class="line">    <span class="comment">//当 data.length 为4,size == 1时会进行缩容，缩减为容量为2；当size == 0, data.length 为3时，进行缩容，缩容到容量为1；</span></span><br><span class="line">    <span class="comment">//当 size == 0, data.length 为2时，也会触发下面代码，但是容量仍保持为1. 容量为1是缩容的最小容量了。</span></span><br><span class="line">    <span class="comment">//如果 data.length 为1，那么缩容到 data.length/2的话，就是缩容到0，resize中有 new 一个数组的操作，new 一个容量为0 的数组是不可以的。</span></span><br><span class="line">    <span class="keyword">if</span>(size == data.length/<span class="number">4</span> &amp;&amp; data.length/<span class="number">2</span> != <span class="number">0</span>)&#123;</span><br><span class="line">        resize(data.length/<span class="number">2</span>);           </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag">#Data Structure</a>
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/15/Programming/Algorithm_and_Data_Structure/Python/First_Bundle_of_Algorithm/章节3：选择排序/" rel="prev">2. Selection Sorting (选择排序)</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/17/Programming/Algorithm_and_Data_Structure/Java/Play_Data_Structure/第十四章 哈希表/" rel="next">第十四章 哈希表</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png" alt="Jason" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jason</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Never late to study</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-不要小瞧数组"><span class="nav-number">1.</span> <span class="nav-text">第二章 不要小瞧数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-使用-Java-中的数组"><span class="nav-number">1.1.</span> <span class="nav-text">2-1 使用 Java 中的数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-二次封装属于我们自己的数组"><span class="nav-number">1.2.</span> <span class="nav-text">2-2 二次封装属于我们自己的数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-向数组中添加元素"><span class="nav-number">1.3.</span> <span class="nav-text">2-3 向数组中添加元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-数组中查询和修改元素"><span class="nav-number">1.4.</span> <span class="nav-text">2-4 数组中查询和修改元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-包含、搜索和删除"><span class="nav-number">1.5.</span> <span class="nav-text">2-5 包含、搜索和删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-使用泛型"><span class="nav-number">1.6.</span> <span class="nav-text">2-6 使用泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-动态数组"><span class="nav-number">1.7.</span> <span class="nav-text">2-7 动态数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-简单的复杂度分析"><span class="nav-number">1.8.</span> <span class="nav-text">2-8 简单的复杂度分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-均摊复杂度和防止复杂度震荡"><span class="nav-number">1.9.</span> <span class="nav-text">2-9 均摊复杂度和防止复杂度震荡</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+
+<div class="powered-by">
+  本博客由基于NodeJS的 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

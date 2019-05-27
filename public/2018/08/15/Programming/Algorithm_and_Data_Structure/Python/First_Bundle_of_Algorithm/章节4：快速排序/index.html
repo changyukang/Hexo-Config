@@ -1,0 +1,759 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta property="wb:webmaster" content="bcffef689668492a" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="Never late to study" />
+
+
+
+  <meta name="keywords" content="Algorithm,Data Structure,Python," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="About quick sorting">
+<meta name="keywords" content="quick sorting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3. Quick Sroting (快速排序)">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/Programming/Algorithm_and_Data_Structure/Python/First_Bundle_of_Algorithm/章节4：快速排序/index.html">
+<meta property="og:site_name" content="Kiwi-Jason">
+<meta property="og:description" content="About quick sorting">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-09T13:20:42.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3. Quick Sroting (快速排序)">
+<meta name="twitter:description" content="About quick sorting">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 3. Quick Sroting (快速排序) | Kiwi-Jason </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Kiwi-Jason</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post  " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              3. Quick Sroting (快速排序)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2018-08-15T20:36:33+09:30" content="2018-08-15">
+            2018-08-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/" itemprop="url" rel="index">
+                  <span itemprop="name">Programming</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/" itemprop="url" rel="index">
+                  <span itemprop="name">Algorithm_and_Data_Structure</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/Python/" itemprop="url" rel="index">
+                  <span itemprop="name">Python</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Programming/Algorithm-and-Data-Structure/Python/First-Bundle-of-Algorithm/" itemprop="url" rel="index">
+                  <span itemprop="name">First_Bundle_of_Algorithm</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+        
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody">&nbsp;&nbsp;&nbsp;&nbsp;<h2 id="4-1-递归"><a href="#4-1-递归" class="headerlink" title="4.1 递归"></a>4.1 递归</h2><p><strong>递归</strong>：程序调用自身的编程技巧，可以减少代码量<br><em>例子</em>：</p>
+<ol>
+<li><p>斐波那契数列: 每一个元素都是其前面两个数之和<br>$1,1,2,3,5,8,13,21…Fib$<br>$Fib(n) = Fib(n-1) + Fib(n-2)$</p>
+</li>
+<li><p>阶乘： $n! = n<em>(n-1)</em>(n-2)<em>…</em>1$<br>$n! = (n-1)! * n$</p>
+</li>
+<li><p>德罗斯效应<br>有很多盒子，每个盒子中又有很多盒子，盒子里面又有很多盒子，在其中一个盒子中有一个 key.</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">递归伪码：</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">look_for_key</span><span class="params">(box)</span>:</span></span><br><span class="line">  <span class="keyword">for</span> item <span class="keyword">in</span> box:      //item 是外层盒子里面的一个盒子</span><br><span class="line">    <span class="keyword">if</span> item is_box():</span><br><span class="line">      look_for_key(item)</span><br><span class="line">    <span class="keyword">elif</span> item.is_key():</span><br><span class="line">      <span class="keyword">print</span> <span class="string">"found key!"</span></span><br></pre></td></tr></table></figure>
+<p><strong>递归缺点</strong>：多次函数调用，占用太多的内存空间<br><strong>递归优点</strong>：程序简洁，易于理解</p>
+<h2 id="4-2-栈与调用栈"><a href="#4-2-栈与调用栈" class="headerlink" title="4.2 栈与调用栈"></a>4.2 栈与调用栈</h2><p>承接上节：递归</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*倒计时*/</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(i)</span></span></span><br><span class="line"><span class="function">  <span class="title">print</span> <span class="title">i</span></span></span><br><span class="line"><span class="function">  <span class="title">countdown</span><span class="params">(i<span class="number">-1</span>)</span></span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function">调用上面递归函数</span></span><br><span class="line"><span class="function"><span class="title">print</span> <span class="title">countdown</span><span class="params">(<span class="number">10</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>问题</strong>：上面程序没有递归截止条件，所以打印到0后还会继续打印-1，-2 …，修改为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*倒计时*/</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(i)</span></span></span><br><span class="line"><span class="function">  <span class="title">print</span> <span class="title">i</span></span></span><br><span class="line">  if i&lt;=0:        //截止条件</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    countdown(i<span class="number">-1</span>)</span><br><span class="line">  </span><br><span class="line">调用上面递归函数</span><br><span class="line"><span class="keyword">print</span> countdown(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>调用栈</strong>：压入、弹出<br>存储函数调用关系的栈称为“<em>调用栈</em> ”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet</span><span class="params">(name)</span></span></span><br><span class="line">  print "hello, " + name"!"</span><br><span class="line">  greet2(name)</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"getting ready to say bye"</span></span><br><span class="line">  bye()</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet2</span><span class="params">(name)</span></span></span><br><span class="line">  print "how are you, " +name+"?"</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bye</span><span class="params">()</span></span></span><br><span class="line">  print "ok, bye!"</span><br><span class="line">  </span><br><span class="line">//调用上面的函数</span><br><span class="line">greet(<span class="string">"Dave"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>递归调用栈</strong>: 也是函数调用，只不过调用的都是自身，是递归调用<br>阶乘：factorial<br>$f(5) = 5! = 5<em>4</em>3<em>2</em>1$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> x = <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> x*f(x<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>递</th>
+<th>归</th>
+<th>调</th>
+<th>用</th>
+<th>栈</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$f(5)$</td>
+</tr>
+<tr>
+<td>$x=5$</td>
+<td>$f(4)$</td>
+</tr>
+<tr>
+<td></td>
+<td>$x=4$</td>
+<td>$f(3)$</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$x=3$</td>
+<td>$f(2)$</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$x=2$</td>
+<td>$f(1)$</td>
+</tr>
+</tbody>
+</table>
+<p>求 f(5)必须先求 f(4)、f(3)、f(2)、f(1)，所以变量占内存空间较大。<br>递归使用的就是调用栈。</p>
+<h2 id="4-3-分而治之"><a href="#4-3-分而治之" class="headerlink" title="4.3 分而治之"></a>4.3 分而治之</h2><p><strong>算法的核心</strong>：<br><em>分治</em>：分而治之（divide and conquer）<br><em>例子</em>：土地分割</p>
+<table>
+<thead>
+<tr>
+<th>长：168m 宽64m</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>一个长168m,宽64m 的长方形面积，要求划分成<strong>尽可能大</strong>的<strong>正方形</strong>。<br><strong>做法</strong>：直接取长度的一半不可以，因为长是84m，不等于宽64m.所以应该先以短边为基准划分成两个64*64的正方形和一个40*64的长方形，然后同样的方式划分这个长方形，依次进行下去。</p>
+<p>上面是把这么大一块土地进行分割，就不要整体考虑了，把它分成不同的小部分进行处理。（<em>感觉这个做分治的思想例子不是很合理，容易理解成递归</em>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">求和：</span><br><span class="line">arr = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>]</span><br><span class="line">sum(arr) = <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(arr)</span></span></span><br><span class="line">  total = 0</span><br><span class="line">  <span class="keyword">for</span> x <span class="keyword">in</span> arr:</span><br><span class="line">    total += x</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<p>上面是使用循环的方式进行的，这节讲的是递归，所以下面使用递归的方式进行处理</p>
+<p><strong>基线条件</strong>：</p>
+<ol>
+<li>空数组</li>
+<li>一个元素的数组</li>
+</ol>
+<p>上面的数组就可以这样递归：<br>sum[2,4,6] = 2 + sum[4,6] = 2 + 4 + sum<a href="这里 sum[6]就符合上面的基线条件2了">6</a></p>
+<h2 id="4-4-快速排序"><a href="#4-4-快速排序" class="headerlink" title="4.4 快速排序"></a>4.4 快速排序</h2><h3 id="4-4-1-快速排序概述"><a href="#4-4-1-快速排序概述" class="headerlink" title="4.4.1 快速排序概述"></a>4.4.1 快速排序概述</h3><p><strong>快速排序</strong>：优雅</p>
+<p>C语言：qsort(quick sort)<br>基线条件：空数组或者只有一个元素的数组（<em>这里都是基于数组的排序，基于链表的如何实现呢？</em>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quicksort</span><span class="params">(arr)</span></span></span><br><span class="line"><span class="function">  <span class="title">if</span> <span class="title">len</span><span class="params">(arr)</span> &lt; 2     //基线条件</span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">arr</span></span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>如果是两个元素的数组：<br>|x|y|<br>|-|-|<br>如果 x &gt; y，并且是要求从小到大排序的话，直接两个互换即可。</p>
+</li>
+<li><p>对于三个元素的数组：<br>|15|33|10|<br>|-|-|-|<br>此时需要分治的思想。假设取15为基准值，那么上面的值可以分成两部分，比15小的放在基准值15的左边，比15大的放在基准值15的右边。这样就把除基准值之外的元素分成两个区了（10）15（33）。假设这两个区都是有序的，那么这整个数组就是有序的了。所以只需要在分别对这两个区的元素做排序即可（同样适用分治的思想）。<br>.<br>取基准值为15，一般基准值都取第一个元素的值<br>quicksort([33,15,10]) = quicksort([10]) + [15] + quicksort([33])</p>
+</li>
+</ol>
+<ol start="3">
+<li>对于四个元素的数组，同样的思路，步骤如下：<ul>
+<li>选基准值，一般取第一个元素的值</li>
+<li>把元素进行分区，小于基准值的放左边，大于基准值的放右边（<strong>分治</strong>）</li>
+<li>对这两个区同样进行上面的操作（<strong>递归</strong>）</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-4-2-快速排序的程序表示法"><a href="#4-4-2-快速排序的程序表示法" class="headerlink" title="4.4.2 快速排序的程序表示法"></a>4.4.2 快速排序的程序表示法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quicksort</span><span class="params">(arr)</span>：</span></span><br><span class="line"><span class="function">  <span class="title">if</span> <span class="title">len</span><span class="params">(arr)</span> &lt; 2:</span>    //递归基线条件</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    pivot = arr[<span class="number">0</span>]    //选取基准值</span><br><span class="line">    less = []</span><br><span class="line">    greater = []      //这里定义两个数组，表示上面分治说的那两个分区</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> arr[<span class="number">1</span>:]: //因为选第一个元素为基准值，所以这里从第二个元素开始处理</span><br><span class="line">      <span class="keyword">if</span> i &lt;= pivot:</span><br><span class="line">        less.append(i)</span><br><span class="line">      <span class="keyword">else</span>:</span><br><span class="line">        greater.append(i)</span><br><span class="line">    </span><br><span class="line">    //分治后的分区分别再进行快速排序，并将这三个数组连接起来</span><br><span class="line">    <span class="keyword">return</span> quicksort(less) + [pivot] + quicksort(greater)</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-3-快速排序的大-O-表示法"><a href="#4-4-3-快速排序的大-O-表示法" class="headerlink" title="4.4.3 快速排序的大 O 表示法"></a>4.4.3 快速排序的大 O 表示法</h3><p>一些典型的算法复杂度回顾：<br><em>假设计算机 cpu $1$秒执行 $t = 10$ 次指令, 元素基数是 $n = 100$</em>。时间复杂度是基于<strong>秒</strong>的，所以<strong>最终时间复杂度的结果应该转化成秒</strong>。n 是100， cpu 1s 执行10次，所以 1s 处理 n/t = 100/10 = 10个元素。下面的大 O 表示法是在1秒1条指令的基础上进行表示的，<strong>也可以理解成1秒处理一个元素</strong>，在 cpu 1s 执行10次的基础上，下面的大 O 表示法应该为：<br>$O(log_2^n)$ —&gt; $O(log_2^{n/t})$<br>$O(n) —&gt; O(n/t)$<br>… …</p>
+<p>所以实际上的执行时间为：<br>|$O(log_2^n)$|$O(n)$|$O(n*log_2^n)$|$O(n^2)$|$O(n!)$|<br>| - | - | - | - | - |<br>| $log_2^{100/10} = 3.3s$ | $10s$ | $33s$ | $100s$ |  $42 day$ |</p>
+<p><em>cpu 实际上一秒执行运算次数太多，为了控制在一秒执行一条，可以在代码中每条执行后加一个 sleep(1)–可以只在关键部分加上这个，比如下面例子中的只在数组处理时才加上这个 sleep. 这样的模型就是1秒执行一条指令的了，可以用|$O(log_2^n)$|$O(n)$|$O(n</em>log_2^n)$|$O(n^2)$|$O(n!)$|来计算时间复杂度，并且方便代码演示，比如：*</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_item</span><span class="params">(list)</span>:</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> list:</span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line">    </span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">print_item(list1)</span><br><span class="line"></span><br><span class="line">这里，n 是<span class="number">5</span>（数组元素个数）, 经过 sleep（<span class="number">1</span>）后，<span class="number">1</span>s 仅执行一个元素的处理。这个 <span class="keyword">print</span> 操作的时间复杂度是O(n)，所以处理<span class="number">5</span>个元素的时间应该是：O(n=<span class="number">5</span>) = <span class="number">5</span>s。运行程序可以看到<span class="number">1</span>秒仅打印一个数据。</span><br></pre></td></tr></table></figure>
+<p>一般情况下，c*n可以简要记作 n，c 是常数项，忽略不计。这个 c 在 n 很小的时候影响很大，但是当 n 很大时，c 的影响就很小了，可以忽略了。算法复杂度计算时，n 都理解为很大的一个数，所以常数项可以忽略。</p>
+<p>除此之外，当 n 比较小时，$O(n)$可能会比$O(log_2^n)$要大，但是当 n 很大，就反过来了，所以时间复杂度是后者，以 n 很大的时候计算出的（这种说法是在带常数项的情况下，比如$0.01n$ 和$0.1log_2^n$,如果 n=5，那么前者是小于后者的，但是当 n=1000000时，前者就大于后者了）。</p>
+<h3 id="4-4-4-快速排序的平均情况和最坏情况"><a href="#4-4-4-快速排序的平均情况和最坏情况" class="headerlink" title="4.4.4 快速排序的平均情况和最坏情况"></a>4.4.4 快速排序的平均情况和最坏情况</h3><p>快速排序：<br>平均情况：$O(nlog_2^n)$<br>最坏情况：$O(n^2)$</p>
+<p><strong>最坏情况例子</strong><br>|10|9|8|7|6|5|4|3|2|1|<br>|-|-|-|-|-|-|-|-|-|-|<br>这样如果要用快速排序从小到大排序，每次取每部分第一个元素为基准值，比如第一次取10，这样分成的两部分为：<br>|9|8|7|6|5|4|3|2|1|左|10|右|-|-|-|<br>|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|</p>
+<p>分完后，右边没有元素，只有左边有，这样并没有起到分治的目的。算法复杂度也没有因为分治的处理而减少。因为每次取到的都是最大值，没有起到区分的效果。</p>
+<p>但是上面的最差情况，一般不用于算法复杂度的评估，实际上用于算法评估的是平均复杂度，前面提到的典型复杂度都是平均情况。而也不会有人对上面那个已经很有序的数组进行排序操作。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag">#Data Structure</a>
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/15/Programming/Algorithm_and_Data_Structure/Python/First_Bundle_of_Algorithm/章节1：算法概述；章节2：二分查找/" rel="prev">1. Binary Search and algorithm summary(算法概述和二分查找)</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/Programming/Algorithm_and_Data_Structure/Python/First_Bundle_of_Algorithm/章节3：选择排序/" rel="next">2. Selection Sorting (选择排序)</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png" alt="Jason" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Jason</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Never late to study</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-递归"><span class="nav-number">1.</span> <span class="nav-text">4.1 递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-栈与调用栈"><span class="nav-number">2.</span> <span class="nav-text">4.2 栈与调用栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-分而治之"><span class="nav-number">3.</span> <span class="nav-text">4.3 分而治之</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-快速排序"><span class="nav-number">4.</span> <span class="nav-text">4.4 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-快速排序概述"><span class="nav-number">4.1.</span> <span class="nav-text">4.4.1 快速排序概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-快速排序的程序表示法"><span class="nav-number">4.2.</span> <span class="nav-text">4.4.2 快速排序的程序表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-快速排序的大-O-表示法"><span class="nav-number">4.3.</span> <span class="nav-text">4.4.3 快速排序的大 O 表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-4-快速排序的平均情况和最坏情况"><span class="nav-number">4.4.</span> <span class="nav-text">4.4.4 快速排序的平均情况和最坏情况</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+
+<div class="powered-by">
+  本博客由基于NodeJS的 <a class="theme-link" href="http://hexo.io">Hexo</a> 驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
