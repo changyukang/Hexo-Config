@@ -9,6 +9,7 @@ description: Introduction to Basic Things of Graph
 ---
 
 # 7-10章：Basic Things of Graph - 最短路径、寻路、连通分量、最小生成树
+
 ## Theory
 
 1. 无向图、有向图
@@ -28,7 +29,7 @@ description: Introduction to Basic Things of Graph
 
 
 ## Implementation
-
+.
 ### 图的表示
 
 1. 邻接矩阵： 用于稠密图，易于遍历和获取对应两个节点是否有一条路径
@@ -63,7 +64,7 @@ description: Introduction to Basic Things of Graph
         ![IMAGE](resources/CCE68A409B7DA4C32DD690C58B7A5119.jpg)
         
         ![IMAGE](resources/E4B1AD6FBCFAC5050F059AEFD361CBF7.jpg)
-
+    
       * 这里在遍历时有个循环，与二叉树遍历原理是一样的，只不过二叉树只有两个分支，所以是把两次分别写出来了，而图节点可能有很多分支，不便一个个列出来；
       * 关于两个节点是否相连，可以通过查询邻接矩阵和邻接表来进行判断，还可以在计算连通分量时将属于一个连通分量的节点都置成同一个 ID,然后根据两个节点是否 id 相同来判断是否相连；
       * 使用并查集只能得到两个节点是否相连，使用图论算法可以知道路径是什么；
@@ -164,9 +165,7 @@ description: Introduction to Basic Things of Graph
       3. 补充：
          1. 对于 Bellman-Ford 算法，因为不能肯定当前找到的那个节点就是最短路径（只是暂时最短的路径，有可能通过负权边松弛操作，找到更短路径），必须经过 V 轮遍历后才能确定，所以没有 Dijkstra 中的那个 marked数组，所有节点都可能多次访问；
          2. 上面算法中松弛操作需要 V轮，实际上不需要这么多，可以进行优化
-
-            * ![](resources/B175C38BFD43CEC234B633C57C663DF9.jpg)
-
+            * ![IMAGE](resources/B175C38BFD43CEC234B633C57C663DF9.jpg)
          3. 对于无向图，如果存在一条负权边，肯定会存在负权环，所以如果判断无向图没有负权环，那么肯定也就没有负权边，此时转用 Dijkstra 算法求解最短路径，算法时间复杂度会降低很多；因此，也可以说 Bellman-Ford 只能处理有向图，因为它是处理有负权边的算法，而含有负权边的无向图肯定含负权环，所以不能用 Bellman-Ford 算法，又对于无向图，如果不含负权边，就可以直接用 Dijkstra 算法了，时间复杂度还低很多；
          
 #### 4. 最短路径算法总结和扩展：
@@ -266,3 +265,35 @@ description: Introduction to Basic Things of Graph
         * 缺点：要删除边，要探测环的存在，当前没有较好的数据结构来支撑这些操作，例如：在 Kruskal算法中提到的最小索引堆和并查集等
     4. prime 算法适用于无向图，kruskal 适用于有向图和无向图
     5. prime 算法适合求稠密图，kruskal 更适合求稀疏图
+ 
+
+
+
+
+<style type="text/css">
+h1,h2,h3,h4,h5,h6 {
+
+  margin-top: -10px; 
+  margin-bottom: 30px;
+  white-space: lage; 
+  outline: none;
+  font-family: sans-serif;
+  line-height: 36px;
+  color: #ffffff;
+  
+  background: #e07766;
+
+  border-left-width: 30px;
+  border-left-style: solid;
+  border-left-color: white;
+  
+  border-right-width:30px;
+  border-right-style:solid;
+  border-right-color:white;
+  
+  border-bottom:3px solid #e07766;
+  border-top:3px dashed #e07766;
+  padding-left:8px;
+  padding-right:10px;
+  width:auto; display:inline-block !important; display:inline; 
+}
