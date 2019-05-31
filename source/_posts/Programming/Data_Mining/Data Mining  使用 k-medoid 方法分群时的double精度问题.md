@@ -1,14 +1,14 @@
-title: Data Mining: 使用 k-medoid 方法分群时的double精度问题
+title: Data Mining:使用 k-medoid 方法分群时的double精度问题
 layout: post
 comment: true
 date: 2019-03-16 03:11:03
-categories: [Data_Mining]
+categories: [Programming,Data_Mining]
 tags: [Data_Mining]
 keywords: double, precision, k-medoid
-description: Data Mining: 使用 k-medoid 方法分群时的double精度问题
+description: Data Mining:使用 k-medoid 方法分群时的double精度问题
 ---
 
-# Data Mining: 使用 k-medoid 方法分群时的double精度问题
+# Data Mining:使用 k-medoid 方法分群时的double精度问题
 
 ## 1. 问题现象：使用k-medoid方法计算绝对误差标准 E时小数存在误差
 根据计算公式，需要将每个 cluster 中的非中心点与该 cluster 的中心点进行距离计算，并将计算的结果累加；

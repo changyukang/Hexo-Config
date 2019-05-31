@@ -2,8 +2,8 @@ title: T(n) = O(f(n)) 解析
 layout: post
 comment: true
 date: 2018-09-15 03:02:00
-categories: [Algorithm_and_Data_Structure]
-tags: [algorithm,O(f(n))]
+categories: [Programming,Algorithm_and_Data_Structure,Misc]
+tags: [Algorithm]
 keywords: algorithm complexity, O(f(n))
 description: about algorithm and O(f(n))
 ---

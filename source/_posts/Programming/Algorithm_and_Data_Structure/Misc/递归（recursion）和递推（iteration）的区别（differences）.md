@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2018-09-08 18:46:21
 categories: [Programming,Algorithm_and_Data_Structure,Misc]
-tags: [Recursion,Iteration,Algorithm,Data Structure]
+tags: [Recursion_Iteration,Algorithm]
 keywords: recursion, iteration and stack
 description: analysing the differences between recursion and iteration
 ---
