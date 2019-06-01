@@ -3,7 +3,7 @@ layout: post
 comment: true
 date: 2016-06-11 16:21:55
 categories: [Programming,Algorithm_and_Data_Structure,Java, Sorting]
-tags: [Java,Algorithm,Data Structure]
+tags: [Java,Algorithm,Data Structure,Sorting]
 keywords: compare sorting, unstable sorting
 description: Introduction to data structure and some basic concepts
 ---
