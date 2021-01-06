@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kiwi-Jason 
+title: Kiwi-Theo
 subtitle:
 description: Never late to study
-author: Jason 
+author: Theo
 language: zh-Hans
 timezone:
 
@@ -87,6 +87,6 @@ deploy:
 admin:
   username: kiwichangyu
   password_hash: $2a$10$rVONP/FLFVjFXAvFgpeUwOI3M5XUs5/jtazkVoZPLV0AkFfq057Kq
-  secret: Welcom, Jason
+  secret: Welcom, Theo
   deployment: './admin_script/hexo-generate.sh'
   # expire: 60*1
