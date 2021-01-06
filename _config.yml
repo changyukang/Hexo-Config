@@ -73,6 +73,7 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 #theme: landscape
 #theme: jade-barebone
+#theme: hexo-theme-next
 theme: TRNexT
 
 # Deployment
