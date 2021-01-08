@@ -31,6 +31,9 @@ keywords: Union,Find,Tree
 * isConnected(p,q)
 
 ### <span style=" color:#e09966">3. Quick Find实现</span>
+
+<!-- more -->
+
 1. 原理
     1. 使用数组来表示并查集，并使用数组中存储的值来表示状态，例如下面，值为 1 的节点或者值为 0 的节点都是相连通的
     ![IMAGE](resources/5B172199A9EC24063581C531309CBB0A.jpg)

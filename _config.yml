@@ -7,7 +7,8 @@ title: Kiwi-Theo
 subtitle:
 description: Never late to study
 author: Theo
-language: zh-Hans
+#language: zh-Hans
+language: zh-CN
 timezone:
 
 # Avatar 
@@ -17,11 +18,11 @@ avatar: uploads/avatar.jpg
 #google_analytics: your-analytics-id
 #baidu_analytics: your-analytics-id   
 #established at 
-since: 2015
+#since: 2015
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://changyukang.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
