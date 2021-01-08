@@ -11,8 +11,8 @@ language: zh-Hans
 timezone:
 
 # Avatar 
-#avatar: uploads/avatar.jpg
-avatar: http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png
+avatar: uploads/avatar.jpg
+#avatar: http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png
 # Google Baidu
 #google_analytics: your-analytics-id
 #baidu_analytics: your-analytics-id   
@@ -73,8 +73,8 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 #theme: landscape
 #theme: jade-barebone
-#theme: hexo-theme-next
-theme: TRNexT
+theme: hexo-theme-next_offical
+#theme: TRNexT
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
