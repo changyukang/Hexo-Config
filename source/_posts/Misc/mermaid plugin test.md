@@ -8,6 +8,7 @@ keywords:
 description: mermaid plugin test
 ---
 
+
 {% mermaid sequenceDiagram %}
 Alice->>John: Hello John, how are you?
 loop Healthcheck
@@ -27,6 +28,7 @@ B --> C{Decision}
 C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
 {% endmermaid %}
+
 
 {% mermaid gantt %}
 section Section
