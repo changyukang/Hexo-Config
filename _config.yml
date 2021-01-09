@@ -91,3 +91,10 @@ admin:
   secret: Welcom, Theo
   deployment: './admin_script/hexo-generate.sh'
   # expire: 60*1
+
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
