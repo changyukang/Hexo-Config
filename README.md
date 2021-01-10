@@ -7,7 +7,7 @@
   2. install hexo
   3. gitclone Hexo-Config in a local directory
   4. run "npm install" in the directory, this will create "npm-modules" in this directory. This directory is in .gitignore, so it will not be downloaded from github.
-  5. run "git submodule init & git submodule" update in the directory, this will update the themes. The themes have been managed by submodule.
+  5. run "git submodule init & git submodule update" in the directory, this will update the themes. The themes have been managed by submodule.
   6. run "hexo g & hexo s", and then open the url in a browser, you can see the blog.
   7. by doing things above, the "hexo init" do not to run in the directory.
 
