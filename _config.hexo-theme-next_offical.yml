@@ -125,7 +125,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png #/images/avatar.gif
+  url: http://kang-theo.github.io/2015/09/15/英语/英语Level/Level11.png #/images/avatar.gif
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
@@ -139,8 +139,8 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/changyukang || fab fa-github
-  E-Mail: mailto:kiwichangyu.kang@gmail.com || fa fa-envelope
+  GitHub: https://github.com/kang-theo || fab fa-github
+  E-Mail: mailto:theo.cy.kang@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -158,13 +158,17 @@ social_icons:
 # Blog rolls
 links_settings:
   icon: fa fa-globe
-  title: Links
+  #title: Links
+  title: 参考链接
   # Available values: block | inline
-  layout: block
+  layout: inline
 
 links:
   #Title: https://example.com
   #空铺招租: http://yoursite.com
+  Next-theme: https://theme-next.js.org
+  YouForever: https://www.zhyong.cn
+  Vince: https://haomingzhang.com
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
