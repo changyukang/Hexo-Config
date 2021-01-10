@@ -88,6 +88,3 @@ section Go home
   Sit down: 3: Me
 {% endmermaid %}
 
-
-
-
