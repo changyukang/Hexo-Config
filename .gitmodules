@@ -1,12 +1,12 @@
 [submodule "themes/TRNexT"]
 	path = themes/TRNexT
-	url = https://github.com/changyukang/TRNexT.git
+	url = https://github.com/kang-theo/TRNexT.git
 [submodule "themes/hexo-theme-next"]
 	path = themes/hexo-theme-next
-	url = https://github.com/changyukang/hexo-theme-next.git
+	url = https://github.com/kang-theo/hexo-theme-next.git
 [submodule "themes/hexo-theme-noderce"]
 	path = themes/hexo-theme-noderce
-	url = https://github.com/changyukang/hexo-theme-noderce.git
+	url = https://github.com/kang-theo/hexo-theme-noderce.git
 [submodule "themes/hexo-theme-next_offical"]
 	path = themes/hexo-theme-next_offical
 	url = https://github.com/next-theme/hexo-theme-next
