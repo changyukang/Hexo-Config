@@ -527,7 +527,7 @@ fancybox: false
 # A JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
@@ -891,8 +891,8 @@ vendors:
 
   # FancyBox
   jquery:
-  fancybox_js:
-  fancybox_css:
+  fancybox_js: 
+  fancybox_css: 
 
   # Medium-zoom
   mediumzoom:
