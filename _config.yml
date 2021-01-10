@@ -134,3 +134,12 @@ search:
   field: post
   content: true
   format: html
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
+#Feed Atom
+# feed:
+# type: atom
+# path: atom.xml
+# limit: 20
