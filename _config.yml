@@ -118,16 +118,16 @@ theme: hexo-theme-next_offical
 deploy:
   type: git
   #repository: https://github.com/changyukang/changyukang.github.io.git
-  repository: git@github.com:changyukang/changyukang.github.io.git
+  repository: git@github.com:kang-theo/kang-theo.github.io.git
   branch: master
 
+# hexo-admin authentification
 admin:
-  username: kiwichangyu
-  password_hash: $2a$10$rVONP/FLFVjFXAvFgpeUwOI3M5XUs5/jtazkVoZPLV0AkFfq057Kq
-  secret: Welcom, Theo
+  username: kiwitheo
+  password_hash: $2a$10$1JsuwjhsTiYQQAinWYRYDuqTLYkHJQ43Bnf6iwD3IqNly7U6sYLwS
+  secret: my pet is a dragon
   deployment: './admin_script/hexo-generate.sh'
   # expire: 60*1
-
 
 search:
   path: search.xml
