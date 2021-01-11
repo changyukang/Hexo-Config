@@ -14,7 +14,7 @@ timezone: ''
 
 # Avatar 
 #avatar: uploads/avatar.jpg
-#avatar: http://changyukang.github.io/2015/09/15/英语/英语Level/Level11.png
+#avatar: http://kang-theo.github.io/2015/09/15/英语/英语Level/Level11.png
 # Google Baidu
 #google_analytics: your-analytics-id
 #baidu_analytics: your-analytics-id   
@@ -23,7 +23,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://changyukang.github.io
+url: https://kang-theo.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
