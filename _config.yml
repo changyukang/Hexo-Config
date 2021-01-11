@@ -126,7 +126,7 @@ admin:
   username: kiwitheo
   password_hash: $2a$10$1JsuwjhsTiYQQAinWYRYDuqTLYkHJQ43Bnf6iwD3IqNly7U6sYLwS
   secret: my pet is a dragon
-  deployment: './admin_script/hexo-generate.sh'
+  deployCommand: './admin_script/hexo-deploy.sh'
   # expire: 60*1
 
 search:

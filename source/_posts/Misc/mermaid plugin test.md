@@ -8,7 +8,6 @@ keywords:
 description: mermaid plugin test
 ---
 
-
 {% mermaid sequenceDiagram %}
 Alice->>John: Hello John, how are you?
 loop Healthcheck
