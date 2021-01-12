@@ -5,7 +5,7 @@ date: 2015-01-16 15:14:35
 categories: Git
 tags: [Git,fork,Vim,Hexo]
 keywords: fork,submodule
-description: 承接上篇博文：如何保存submodule的修改
+description: <div class="note info"><p>承接上篇博文：如何保存submodule的修改</p></div>
 ---
 
 ### 问题背景

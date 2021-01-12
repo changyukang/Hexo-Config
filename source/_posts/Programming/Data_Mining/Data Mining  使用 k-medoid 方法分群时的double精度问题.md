@@ -5,7 +5,7 @@ date: 2019-03-16 03:11:03
 categories: [Programming,Data_Mining]
 tags: [Data_Mining]
 keywords: double, precision, k-medoid
-description: Data Mining:使用 k-medoid 方法分群时的double精度问题
+description: <div class="note info"><p>Data Mining:使用 k-medoid 方法分群时的double精度问题</p></div>
 ---
 
 # Data Mining:使用 k-medoid 方法分群时的double精度问题

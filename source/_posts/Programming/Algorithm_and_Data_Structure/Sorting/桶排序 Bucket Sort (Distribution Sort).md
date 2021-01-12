@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: none compare sorting, stable sorting
 
-description: sorting algorithm about insertion sort
+description: <div class="note info"><p>sorting algorithm about insertion sort</p></div>
 ---
 
 # Bucket Sort (Distribution Sort)

@@ -5,9 +5,13 @@ date: 2021-01-09 19:53:46
 categories: Misc
 tags: mermaid
 keywords:
-description: mermaid plugin test
+description: <div class="note info"><p>mermaid plugin test</p></div>
 ---
 
+---
+{% youtube lJIrF4YjHfQ %}
+
+---
 {% mermaid sequenceDiagram %}
 Alice->>John: Hello John, how are you?
 loop Healthcheck
@@ -19,8 +23,7 @@ John->>Bob: How about you?
 Bob-->>John: Jolly good!
 {% endmermaid %}
 
-<!-- more -->
-
+---
 {% mermaid graph TD %}
 A[Hard] -->|Text| B(Round)
 B --> C{Decision}
@@ -28,7 +31,7 @@ C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
 {% endmermaid %}
 
-
+---
 {% mermaid gantt %}
 section Section
 Completed :done,    des1, 2014-01-06,2014-01-08
@@ -39,7 +42,7 @@ Parallel 3   :         des5, after des3, 1d
 Parallel 4   :         des6, after des4, 1d
 {% endmermaid %}
 
-
+---
 {% mermaid classDiagram %}
 Class01 <|-- AveryLongClass : Cool
 <<interface>> Class01
@@ -58,7 +61,7 @@ class Class10 {
 }
 {% endmermaid %}
 
-
+---
 {% mermaid stateDiagram %}
 [*] --> Still
 Still --> [*]
@@ -69,13 +72,14 @@ Crash --> [*]
 {% endmermaid %}
 
 
+---
 {% mermaid pie %}
 "Dogs" : 386
 "Cats" : 85
 "Rats" : 15
 {% endmermaid %}
 
-
+---
 {% mermaid journey %}
 title My working day
 section Go to work
@@ -86,4 +90,4 @@ section Go home
   Go downstairs: 5: Me
   Sit down: 3: Me
 {% endmermaid %}
-
+---

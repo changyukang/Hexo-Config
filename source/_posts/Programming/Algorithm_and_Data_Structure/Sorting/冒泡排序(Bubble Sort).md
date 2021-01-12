@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: compare sorting, unstable sorting,bubble
 
-description: sorting algorithm about bubble sort
+description: <div class="note info"><p>sorting algorithm about bubble sort</p></div>
 ---
 
 # 冒泡排序(Bubble Sort)

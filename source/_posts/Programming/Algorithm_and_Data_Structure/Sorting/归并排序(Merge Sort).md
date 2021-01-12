@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: compare sorting, stable sorting
 
-description: sorting algorithm about merge sort
+description: <div class="note info"><p>sorting algorithm about merge sort</p></div>
 ---
 
 # 归并排序(Merge Sort)

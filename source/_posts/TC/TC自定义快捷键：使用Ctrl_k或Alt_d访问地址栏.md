@@ -5,7 +5,7 @@ date: 2015-02-03 11:44:29
 categories: TC
 tags: [TC]
 keywords: total commander,ctrl+k,alt+d,ctrl+e
-description: Jump to the address bar and search bar quickly.
+description: <div class="note info"><p>Jump to the address bar and search bar quickly.</p></div>
 ---
 ### 问题背景
 

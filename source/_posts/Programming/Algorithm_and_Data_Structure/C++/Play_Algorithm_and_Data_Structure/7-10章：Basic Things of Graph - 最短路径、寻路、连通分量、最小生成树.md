@@ -5,7 +5,7 @@ date: 2019-02-13 21:28:33
 categories: [Programming,Algorithm_and_Data_Structure,C++, Play_Algorithm_and_Data_Structure]
 tags: [C++,Algorithm,Data Structure]
 keywords: data structure,algorithm
-description: Introduction to Basic Things of Graph
+description: <div class="note info"><p>Introduction to Basic Things of Graph</p></div>
 ---
 
 # 7-10章：Basic Things of Graph - 最短路径、寻路、连通分量、最小生成树
@@ -64,13 +64,14 @@ description: Introduction to Basic Things of Graph
         ![IMAGE](resources/CCE68A409B7DA4C32DD690C58B7A5119.jpg)
         
         ![IMAGE](resources/E4B1AD6FBCFAC5050F059AEFD361CBF7.jpg)
-    
+   
       * 这里在遍历时有个循环，与二叉树遍历原理是一样的，只不过二叉树只有两个分支，所以是把两次分别写出来了，而图节点可能有很多分支，不便一个个列出来；
       * 关于两个节点是否相连，可以通过查询邻接矩阵和邻接表来进行判断，还可以在计算连通分量时将属于一个连通分量的节点都置成同一个 ID,然后根据两个节点是否 id 相同来判断是否相连；
       * 使用并查集只能得到两个节点是否相连，使用图论算法可以知道路径是什么；
       * 广度优先遍历也可以求连通分量；
 
    3. **相邻节点迭代器内部类**
+      
       * https://coding.imooc.com/lesson/71.html#mid=1481
 7. 广度优先遍历
    1. ![](resources/attach-12.png)
@@ -136,7 +137,7 @@ description: Introduction to Basic Things of Graph
            * ![](resources/attach-19.png)
       3. Dijkstra 实现：
            * ![](resources/attach-20.png)
- 
+
 #### 3. Bellman-Ford单源路径最短路径
    1. 负权环
       * ![](resources/attach-21.png)
@@ -265,7 +266,7 @@ description: Introduction to Basic Things of Graph
         * 缺点：要删除边，要探测环的存在，当前没有较好的数据结构来支撑这些操作，例如：在 Kruskal算法中提到的最小索引堆和并查集等
     4. prime 算法适用于无向图，kruskal 适用于有向图和无向图
     5. prime 算法适合求稠密图，kruskal 更适合求稀疏图
- 
+
 
 
 
@@ -280,17 +281,17 @@ h1,h2,h3,h4,h5,h6 {
   font-family: sans-serif;
   line-height: 36px;
   color: #ffffff;
-  
+
   background: #e07766;
 
   border-left-width: 30px;
   border-left-style: solid;
   border-left-color: white;
-  
+
   border-right-width:30px;
   border-right-style:solid;
   border-right-color:white;
-  
+
   border-bottom:3px solid #e07766;
   border-top:3px dashed #e07766;
   padding-left:8px;

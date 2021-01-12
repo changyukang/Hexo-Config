@@ -1,11 +1,11 @@
-﻿title: Kindle原理详解
+title: Kindle原理详解
 layout: post
 date: 2015-01-03 22:36:32
 comment: true
 categories: Kindle
 tags: [Kindle,MarkDown]
 keywords: Kindle,MarkDown
-description: A good beginning
+description: <div class="note info"><p>A good beginning</p></div>
 ---
 ###  概要：
 

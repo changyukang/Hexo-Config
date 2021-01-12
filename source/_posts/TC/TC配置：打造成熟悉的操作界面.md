@@ -5,7 +5,7 @@ date: 2015-02-08 12:08:07
 categories: TC
 tags: [TC,Windows,Linux]
 keywords: total commander,windows
-description: Config Total Commander to be a familiar Resource Manager.
+description: <div class="note info"><p>Config Total Commander to be a familiar Resource Manager.</p></div>
 ---
 ### 问题背景
 

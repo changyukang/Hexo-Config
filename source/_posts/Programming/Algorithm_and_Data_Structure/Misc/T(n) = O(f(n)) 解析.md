@@ -4,7 +4,7 @@ comment: true
 date: 2018-09-15 03:02:00
 categories: [Programming,Algorithm_and_Data_Structure,Misc]
 tags: [Algorithm]
-keywords: algorithm complexity, O(f(n))
+keywords: <div class="note info"><p>algorithm complexity, O(f(n))</p></div>
 description: about algorithm and O(f(n))
 ---
 

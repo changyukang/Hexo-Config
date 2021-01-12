@@ -4,7 +4,7 @@ comment: true
 date: 2019-04-22 14:19:23
 categories: [Programming,Algorithm_and_Data_Structure,C++,Play_Algorithm_and_Data_Structure]
 tags: [C++,Algorithm,Data Structure]
-keywords: Union,Find,Tree
+keywords: <div class="note info"><p>Union,Find,Tree</p></div>
 ---
 
 # <span style=" color:#e07766">6 章：并查集（Union Find）-- 特殊的树形结构</span>

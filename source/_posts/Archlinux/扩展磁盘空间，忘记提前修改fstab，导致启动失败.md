@@ -5,7 +5,7 @@ date: 2015-07-02 20:18:39
 categories: Archlinux
 tags: [Archlinux,VMware,fstab]
 keywords: fstab,boot
-description: 扩展磁盘空间之前，先修改fstab。
+description: <div class="note info"><p>扩展磁盘空间之前，先修改fstab。</p></div>
 ---
 ### 一、问题环境
 

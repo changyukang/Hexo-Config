@@ -5,7 +5,7 @@ date: 2015-01-08 01:01:41
 categories: Git
 tags: [Git,Windows]
 keywords: Git,submodule,windows
-description: Solving Git problems
+description: <div class="note info"><p>Solving Git problems</p></div>
 ---
 1. Windows下git操作目录分隔符的问题
 

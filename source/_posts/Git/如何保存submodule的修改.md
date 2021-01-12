@@ -5,7 +5,7 @@ date: 2015-01-10 20:57:10
 categories: Git
 tags: [Git,Vim,Hexo]
 keywords: Submodule,Fork
-description: About Fork and Submodule
+description: <div class="note info"><p>About Fork and Submodule</p></div>
 ---
 
 ### 背景
@@ -59,7 +59,7 @@ description: About Fork and Submodule
 
 
 
-                                                                      
+​                                                                      
 
 
 

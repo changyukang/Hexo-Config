@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: compare sorting, unstable sorting,counting_sort,radix_sort
 
-description: sorting algorithm about counting sort and radix sort
+description: <div class="note info"><p>sorting algorithm about counting sort and radix sort</p></div>
 ---
 
 # Counting Sort and Radix Sort(Distribution Sort)

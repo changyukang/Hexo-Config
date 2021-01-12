@@ -5,7 +5,7 @@ date: 2015-08-27 11:31:00
 categories: 英语
 tags: [English]
 keywords: pronunciation
-description: 常用短语总结
+description: <div class="note info"><p>常用短语总结</p></div>
 ---
 以下是个人学习过程中总结下来的在口语中比较实用的短语。在英语交流中，我们经常想表达一下自己的想法和见解，但是常常找不到合适的并且地道的单词和短语，所以总结下来，多多使用，最终会与我们合二为一！
 

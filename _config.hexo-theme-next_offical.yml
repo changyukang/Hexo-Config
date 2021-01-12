@@ -243,9 +243,9 @@ footer:
 excerpt_description: true
 # Automatically Excerpt (Not recommend).
 # Use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: true
-  length: 150
+# auto_excerpt:
+#   enable: true
+#   length: 150
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.

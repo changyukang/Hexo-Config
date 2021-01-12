@@ -5,7 +5,7 @@ date: 2015-07-07 12:31:27
 categories: VMware
 tags: [VMware,snapshot]
 keywords: vmware,snapshot
-description: VMware disk space compression.
+description: <div class="note info"><p>VMware disk space compression.</p></div>
 ---
 ### 问题一、空间压缩
 

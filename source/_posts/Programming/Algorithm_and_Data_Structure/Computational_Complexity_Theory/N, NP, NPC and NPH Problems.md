@@ -5,7 +5,7 @@ date: 2017-02-16 03:12:06
 categories: [Programming,Computational_Complexity_Theory]
 tags: [Computational_Complexity]
 keywords: P,NP,NPC,NPH
-description: N, NP, NPC and NPH Problems
+description: <div class="note info"><p>N, NP, NPC and NPH Problems</p></div>
 ---
 
 # N, NP, NPC and NPH Problems

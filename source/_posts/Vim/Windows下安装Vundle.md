@@ -5,7 +5,7 @@ date: 2015-05-26 15:24:36
 categories: Vim
 tags: [Vim,vundle,Windows]
 keywords: Vim,vundle,Windows
-description: How to install vundle in Windows operating system.
+description: <div class="note info"><p>How to install vundle in Windows operating system.</p></div>
 ---
 ### 背景
 

@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: compare sorting, unstable sorting,selection_sort
 
-description: sorting algorithm about selection sort
+description: <div class="note info"><p>sorting algorithm about selection sort</p></div>
 ---
 
 # 选择排序(Selection Sort)

@@ -6,7 +6,7 @@ categories: [Programming,Algorithm_and_Data_Structure,Sorting]
 tags: [Algorithm,Sorting]
 keywords: compare sorting, unstable sorting
 
-description: sorting algorithm about insertion sort
+description: <div class="note info"><p>sorting algorithm about insertion sort</p></div>
 ---
 
 # 插入排序（Insertion Sort）和希尔排序（Shell Sort）
